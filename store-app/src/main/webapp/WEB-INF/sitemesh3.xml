@@ -1,0 +1,11 @@
+<sitemesh>
+    <content-processor>
+        <tag-rule-bundle class="com.store.taglib.PathTagRuleBundle" />
+    </content-processor>
+    <mapping path="/" decorator="/WEB-INF/content/decorators/default_decorator.ftl"/>
+
+    <mapping path="/proxool" exclude="true"/>
+    <mapping path="/js/*" exclude="true"/>
+    <mapping path="/img/*" exclude="true"/>
+    <mapping path="/css/*" exclude="true"/>
+</sitemesh>

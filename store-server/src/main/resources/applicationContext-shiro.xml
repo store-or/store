@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+        <property name="securityManager" ref="securityManager"/>
+        <property name="loginUrl" value="/login"/>
+        <property name="successUrl" value="/home"/>
+        <property name="unauthorizedUrl" value="/unauthorized"/>
+        <property name="filterChainDefinitions">
+            <value>
+                <!-- 接口允许匿名访问 -->
+                /is/** = anon
+                /js/** = anon
+                /img/** = anon
+                /css/** = anon
+                /logout = logout
+                /login = omsAuthc
+                /** = omsAuthc,omsAutho
+            </value>
+        </property>
+    </bean>
+
+    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+        <property name="realm" ref="shiroDbRealm"/>
+        <property name="rememberMeManager"><null/></property>
+    </bean>
+    <bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
+
+    <bean id="shiroDbRealm" class="com.privilege.security.ShiroDbRealm" init-method="initCredentialsMatcher"/>
+    <!-- 验证登陆-->
+    <bean id="omsAuthc" class="com.privilege.security.CustomAuthenticationFilter"/>
+    <!-- 认证 授权-->
+    <bean id="omsAutho" class="com.privilege.security.CustomAuthorizationFilter"/>
+</beans>

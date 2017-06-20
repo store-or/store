@@ -1,0 +1,34 @@
+<resource>
+    <name>privilege</name>  <!--不可更改,除非手工操作数据库-->
+    <description>权限管理</description>
+    <actions>
+        <action>
+            <name>user-list</name> <!--不可更改-->
+            <uri>/privilege/user/list;/privilege/user/ajaxList</uri>
+            <method>*</method>
+            <description>用户查询</description>
+        </action>
+        <action>
+            <name>user-operate</name>
+            <uri>/privilege/user/save;/privilege/user/toAdd;/privilege/user/toModify;/privilege/user/modify;/privilege/user/del;/privilege/user/toModifyPassword;/privilege/user/modifyPassword</uri>
+            <method>*</method>
+            <description>用户增删改</description>
+        </action>
+        <action>
+            <name>role-operate</name>
+            <uri>
+                /privilege/role/list;/privilege/role/ajaxList;/privilege/role/save;/privilege/role/toAdd;/privilege/role/toModify;/privilege/role/delete;/privilege/role/modify;
+                /privilege/role/popUser;/privilege/role/assignUser;
+                /privilege/role/popAction;/privilege/role/assignAction
+            </uri>
+            <method>*</method>
+            <description>角色管理</description>
+        </action>
+        <action>
+            <name>resource-operate</name>
+            <uri>/privilege/resource/showUpload/;/privilege/resource/upload</uri>
+            <method>*</method>
+            <description>资源管理</description>
+        </action>
+    </actions>
+</resource>

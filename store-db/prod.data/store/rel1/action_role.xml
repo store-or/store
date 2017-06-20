@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+
+    <changeSet id="create.sequence" author="laizy">
+        <createSequence sequenceName="seq_action_role" startValue="10000" />
+    </changeSet>
+    <changeSet id="create.table" author="laizy">
+        <createTable tableName="action_role">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="action" type="varchar(64)"/>
+            <column name="role_id" type="bigint"/>
+        </createTable>
+        <addUniqueConstraint tableName="action_role" columnNames="action,role_id" constraintName="unique_action_role_id" />
+    </changeSet>
+    <changeSet id="create.index" author="laizy">
+        <createIndex tableName="action_role" indexName="idx_action_role_role_id">
+            <column name="role_id"/>
+        </createIndex>
+    </changeSet>
+</databaseChangeLog>

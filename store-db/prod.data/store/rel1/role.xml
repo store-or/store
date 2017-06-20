@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+
+    <changeSet id="create.sequence" author="laizy">
+        <createSequence sequenceName="seq_role" startValue="10000" />
+    </changeSet>
+    <changeSet id="create.table" author="laizy">
+        <createTable tableName="role">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="name" type="varchar(128)">
+                <constraints nullable="false" unique="true" />
+            </column>
+            <column name="path" type="varchar(256)"/>
+            <column name="description" type="varchar(256)"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="1" author="laizy">
+        <sql>
+            delete from role;
+            insert into role (name, path,  description , id) values ('ROLE_SUPERUSER', '/1/', '超级用户', 1);
+        </sql>
+    </changeSet>
+</databaseChangeLog>

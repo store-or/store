@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+
+    <changeSet id="create.sequence" author="laizy">
+        <createSequence sequenceName="seq_classify" startValue="10000" />
+    </changeSet>
+    <changeSet id="create.table" author="laizy">
+        <createTable tableName="classify">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="name" type="varchar(256)" remarks="名称">
+                <constraints nullable="false" unique="true" />
+            </column>
+            <column name="index" type="integer" remarks="排序，越小越前"/>
+            <column name="create_user" type="varchar(64)" remarks="上传用户"/>
+            <column name="create_time" type="bigint" remarks="上传时间"/>
+            <column name="update_user" type="varchar(64)" remarks="更新用户"/>
+            <column name="update_time" type="bigint" remarks="更新时间"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

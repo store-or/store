@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+
+    <changeSet id="create.sequence" author="laizy">
+        <createSequence sequenceName="seq_product" startValue="10000" />
+    </changeSet>
+    <changeSet id="create.table" author="laizy">
+        <createTable tableName="product">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="name" type="varchar(256)" remarks="名称">
+                <constraints nullable="false" unique="true" />
+            </column>
+            <column name="detail_id" type="bigint" remarks="详情id">
+                <constraints nullable="false" unique="true" />
+            </column>
+            <column name="classify_ids" type="text" remarks="冗余字段，用于存在分类的id列表;格式,100,100,"/>
+            <column name="link" type="varchar(1024)" remarks="购买链接"/>
+            <column name="introduction" type="varchar(128)" remarks="一句话介绍"/>
+            <column name="tag" type="varchar(32)" remarks="推荐标签(NEW:新品、RECOMMEND:推荐、HOT:热卖、FACIAL:招牌)"/>
+            <column name="cover" type="varchar(1024)" remarks="封面"/>
+            <column name="pictures" type="varchar(4096)" remarks="四张的产品图片"/>
+            <column name="description" type="varchar(512)" remarks="简介"/>
+            <column name="top_time" type="bigint" remarks="置顶时间"/>
+            <column name="status" type="tinyint" remarks="状态;1:上架、0:下架"/>
+            <column name="create_user" type="varchar(64)" remarks="上传用户"/>
+            <column name="create_time" type="bigint" remarks="上传时间"/>
+            <column name="update_user" type="varchar(64)" remarks="更新用户"/>
+            <column name="update_time" type="bigint" remarks="更新时间"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

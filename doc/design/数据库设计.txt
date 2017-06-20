@@ -1,0 +1,69 @@
+﻿// 分类表
+table   classify {
+     id bigint,     // id
+     name varchar(256),       // 不能重复
+     index   int,             // 排序，越小排越前
+     create_time   bigint,    // 创建时间
+     create_user   varchar(256), // 创建用户
+     update_time   bigint,    // 更新时间
+     update_user   varchar(256)   // 更新用户
+}
+
+// 产品表
+table   product {
+     id    bigint,                // 产品id
+     name  varchar(256),          // 产品名称
+     classify_id bigint,          // 分类id
+     link  varchar(1024),         // 购买链接
+     introduction varchar(128),     // 一句话介绍
+     tags  varchar(256),          // 推荐标签(NEW:新品、RECOMMEND:推荐、HOT:热卖、FACIAL:招牌)
+     cover  varchar(1024),        // 封面
+     pictures  varchar(4096),     // 四张的产品图片
+     description varchar(512),    // 简介
+     properties  text,            // 商品属性
+     detail      text,            // 商品详情
+     create_time   bigint,    // 创建时间
+     create_user   varchar(256), // 创建用户
+     update_time   bigint,    // 更新时间
+     update_user   varchar(256)   // 更新用户    
+}
+
+// banner表
+table banner {
+     id            bigint,     // banner id
+     name          varchar(128),       // banner名称
+     type          varchar(32),        // 推荐类型(HOME:首页、PRODUCT：产品页)
+     poster        varchar(1024),      // 海报
+     link          varchar(1024),      // 链接地址
+     index         int,                // 位置，越小越前
+     create_time   bigint,    // 创建时间
+     create_user   varchar(256), // 创建用户
+     update_time   bigint,    // 更新时间
+     update_user   varchar(256)   // 更新用户 
+}
+
+// recommend(精品推荐)
+table recommend{
+     id            bigint,     // recommend id
+     product_id    bigint,       // 产品id
+     index         int,                // 位置，越小越前
+     create_time   bigint,    // 创建时间
+     create_user   varchar(256), // 创建用户
+     update_time   bigint,    // 更新时间
+     update_user   varchar(256)   // 更新用户
+}
+
+// menu(菜单表)
+table  menu {
+     id            bigint,     // recommend id
+     type          varchar(32),       // 菜单类型，ABOUT_US(关于我们)
+     index         int,                // 位置，越小越前
+     current_content       text,       // 当前菜单内容
+     publish_content  text,            // 发布内容
+     current_version  varchar(64) ,     // 当前版本
+     publish_version  varchar(64),     //  发布版本，当等于当前版本时，表示已发布；否则未发布
+     create_time   bigint,    // 创建时间
+     create_user   varchar(256), // 创建用户
+     update_time   bigint,    // 更新时间
+     update_user   varchar(256)   // 更新用户
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+
+    <changeSet id="create.sequence" author="laizy">
+        <createSequence sequenceName="seq_product_classify" startValue="10000" />
+    </changeSet>
+    <changeSet id="create.table" author="laizy">
+        <createTable tableName="product_classify">
+            <column name="product_id" type="bigint" remarks="产品id">
+                <constraints nullable="false" />
+            </column>
+            <column name="classify_id" type="bigint" remarks="分类id">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+        <addUniqueConstraint tableName="product_classify" columnNames="product_id,classify_id" constraintName="pk_product_classify" />
+    </changeSet>
+</databaseChangeLog>

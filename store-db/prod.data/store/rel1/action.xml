@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+
+    <changeSet id="create.sequence" author="laizy">
+        <createSequence sequenceName="seq_action" startValue="10000" />
+    </changeSet>
+    <changeSet id="create.table" author="laizy">
+        <createTable tableName="action">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="name" type="varchar(64)">
+                <constraints nullable="false" unique="true" />
+            </column>
+            <column name="uri" type="varchar(1024)"/>
+            <column name="method" type="varchar(64)"/>
+            <column name="parameter" type="varchar(4096)"/>
+            <column name="filter" type="varchar(64)"/>
+            <column name="description" type="varchar(256)"/>
+            <column name="resource_id" type="bigint"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="create.index" author="laizy">
+        <createIndex tableName="action" indexName="idx_action_name">
+            <column name="name"/>
+        </createIndex>
+    </changeSet>
+</databaseChangeLog>

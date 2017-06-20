@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+
+    <property name="table.name" value="user_role" />
+    <changeSet id="create.table" author="laizy">
+        <createTable tableName="user_role">
+            <column name="user_id" type="bigint"/>
+            <column name="role_id" type="bigint"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="create.index" author="laizy">
+        <createIndex tableName="user_role" indexName="idx_user_role_user_id">
+            <column name="user_id"/>
+        </createIndex>
+        <createIndex tableName="user_role" indexName="idx_user_role_role_id">
+            <column name="role_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet id="1" author="laizy">
+        <sql>
+            delete from user_role;
+            insert into user_role (role_id, user_id) values (1, 1);
+        </sql>
+    </changeSet>
+</databaseChangeLog>

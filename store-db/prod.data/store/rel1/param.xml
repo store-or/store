@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+
+	<changeSet id="create.sequence" author="laizy">
+		<createSequence sequenceName="seq_param" startValue="10000" />
+	</changeSet>
+	
+	<changeSet id="create.table" author="laizy">
+		<createTable tableName="param">
+			<column name="id" type="BIGINT">
+				<constraints primaryKey="true" nullable="false" />
+			</column>
+			<column name="name" type="VARCHAR(128)">
+				<constraints nullable="true" />
+			</column>
+			<column name="value" type="text">
+				<constraints nullable="true" />
+			</column>
+			<column name="field" type="VARCHAR(128)">
+				<constraints nullable="true" />
+			</column>
+			<column name="description" type="VARCHAR(128)">
+				<constraints nullable="true" />
+			</column>
+		</createTable>
+	</changeSet>
+
+    <changeSet id="2" author="laizy">
+        <addColumn tableName="param">
+            <column name="type" type="varchar(64)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet id="3" author="laizy">
+        <addColumn tableName="param">
+            <column name="is_system" type="tinyint" remarks="1表示系统参数，在系统配置页面；0表示否"/>
+        </addColumn>
+    </changeSet>
+</databaseChangeLog>

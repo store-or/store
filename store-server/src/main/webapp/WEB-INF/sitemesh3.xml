@@ -1,0 +1,24 @@
+<sitemesh>
+    <content-processor>
+        <tag-rule-bundle class="com.store.taglib.PathTagRuleBundle" />
+    </content-processor>
+    <mapping path="/" decorator="/WEB-INF/content/decorators/home_decorator.ftl"/>
+    <mapping path="/home" decorator="/WEB-INF/content/decorators/home_decorator.ftl"/>
+    <mapping path="/**" decorator="/WEB-INF/content/decorators/default_decorator.ftl"/>
+    <mapping path="/privilege/*" decorator="/WEB-INF/content/decorators/sys_decorator.ftl"/>
+    <mapping path="/param/*" decorator="/WEB-INF/content/decorators/sys_decorator.ftl"/>
+
+    <mapping path="/proxool" exclude="true"/>
+    <mapping path="/js/*" exclude="true"/>
+    <mapping path="/file/*" exclude="true"/>
+    <mapping path="/companyConfig/modify" exclude="true"/>
+    <mapping path="/product/modify" exclude="true"/>
+    <mapping path="/product/save" exclude="true"/>
+    <mapping path="/banner/save" exclude="true"/>
+    <mapping path="/banner/modify" exclude="true"/>
+    <mapping path="/img/*" exclude="true"/>
+    <mapping path="/css/*" exclude="true"/>
+    <mapping path="/login" exclude="true"/>
+    <mapping path="/logout" exclude="true"/>
+    <mapping path="/unauthorized" exclude="true"/>
+</sitemesh>

@@ -1,0 +1,124 @@
+::-webkit-input-placeholder {
+    color: #bfbfbf!important;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+    color: #bfbfbf!important;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+    color: #bfbfbf!important;
+}
+
+:-ms-input-placeholder {
+    color: #bfbfbf!important;
+}
+
+.search-form input::-webkit-input-placeholder {
+    color: #c6d1e2!important;
+}
+
+.search-form input:-moz-placeholder { /* Firefox 18- */
+    color: #c6d1e2!important;
+}
+
+.search-form input::-moz-placeholder {  /* Firefox 19+ */
+    color: #c6d1e2!important;
+}
+
+.search-form input:-ms-input-placeholder {
+    color: #c6d1e2!important;
+}
+
+.page-content {
+    background: #38434e;
+}
+
+.navbar .logo-box {
+    background: #2c333d;
+}
+
+.navbar .logo-box a {
+    color: #fff;
+}
+
+.topmenu-outer {
+    background: #2c333d;
+}
+
+.top-menu .navbar-nav > li > a {
+    color: #fff;
+}
+
+.sidebar {
+    background: #2c2f43;
+}
+
+.sidebar-profile span small {
+    color: #899dc1;
+}
+
+.menu {
+    background: #2c2f43;
+}
+
+.menu.accordion-menu a {
+    color: #c6d1e2;
+}
+
+.menu.accordion-menu li {
+    /*  border-bottom: 1px solid #232638;*/
+}
+.nav-line{
+    border-bottom: 1px solid #232638;
+    width:70%;
+    margin:0 auto;
+}
+.menu.accordion-menu ul.sub-menu li {
+    border: none;
+}
+.menu.accordion-menu > li > a:hover {
+    border-radius: 0;
+    color:#fff;
+}
+.menu.accordion-menu > li.active > a,
+.menu.accordion-menu > li.active.open > a {
+    border-radius: 0;
+    border-left:4px solid #4489ca;
+}
+.menu.accordion-menu > li.active > a p,
+.menu.accordion-menu > li.active.open > a p,
+.menu.accordion-menu > li.active > a,
+.menu.accordion-menu > li.active.open > a {
+    color: #fff;
+}
+
+.small-sidebar:not(.page-sidebar-fixed) .accordion-menu li.droplink:hover > a,
+.horizontal-bar .accordion-menu > li.droplink:hover > a,
+.menu.accordion-menu li.open > a,
+.hover-menu .accordion-menu > li.droplink:hover > a {
+    border-left:4px solid #4489ca;
+    color: #fff;
+    background: none;
+}
+
+body:not(fixed-sidebar) .small-sidebar .horizontal-bar .accordion-menu > li > ul {
+    top: 51px!important;
+}
+
+
+.menu.accordion-menu ul li a {
+    color: #b3bfd0;
+}
+
+.search-form.boxed-layout-search .input-group,
+.search-form {
+    background: #435360;
+}
+
+.page-footer {
+    background: #38434E;
+}
+
+
+
