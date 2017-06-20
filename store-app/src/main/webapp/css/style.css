@@ -169,6 +169,7 @@ input[type="text"],input[type="password"],input[type="email"], textarea, select 
 }
 
 .product .dzen_container [class*="column_DD_span"] {float:left;margin-right:1.8%}
+.product .cur{float:left}
 
 .dzen_column_DD_span12 {
 	width: 100%;
@@ -4123,7 +4124,6 @@ aside.sidebar .flickr_stream img {
 	height: 100%;
 	overflow: hidden;
 	font-size: 15px;
-	font-size: initial;
 	line-height: normal;
 	white-space: normal;
 	vertical-align: top;

@@ -10,7 +10,7 @@
         function initClassifyTable() {
             $("#classifies table").tableDrag({
                 callback : function (row, from, to) {
-                    updateIndex($(row).attr("bannerId"), to);
+                    updateIndex($(row).attr("classifyId"), to);
                 }
             });
         }

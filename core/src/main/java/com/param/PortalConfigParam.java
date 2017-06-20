@@ -16,4 +16,9 @@ public class PortalConfigParam {
     @Param(key = "fileDownLoadUrl", description = "文件下载地址")
     public static String fileDownLoadUrl = "http://172.16.0.101:10000";
 
+    @Param(key = "company", description = "公司名称")
+    public static String company = "";
+
+    @Param(key = "copyright", description = "版权信息")
+    public static String copyright = "";
 }

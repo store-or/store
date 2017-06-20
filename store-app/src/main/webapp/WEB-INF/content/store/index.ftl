@@ -60,11 +60,13 @@
                     <h3>CONTACT</h3>
                     <h6>联系我们</h6>
                     <div class="contact_info_widget">
-                        <p>   <a href=""><img src="${absoluteContextPath}/img/tmall-big.png" alt=""/></a>
+                        <p>
+                            <a href="${CompanyConfig.weibo!""}"><img src="${absoluteContextPath}/img/sina-big.png" alt=""/></a>
                             <a href=""><img src="${absoluteContextPath}/img/weix-big.png" alt=""/></a>
-                            <a href=""><img src="${absoluteContextPath}/img/sina-big.png" alt=""/></a></p>
-                        <p>订购热线：0592-5113003</p>
-                        <p>地址：Kendall is eighteen now, living every day to it's recorded</p>
+                            <a href="${CompanyConfig.tmall!""}"><img src="${absoluteContextPath}/img/tmall-big.png" alt=""/></a>
+                        </p>
+                        <p>订购热线：${CompanyConfig.phone!""}</p>
+                        <p>地址：${CompanyConfig.address!""}</p>
                     </div>
                 </div>
             </div>

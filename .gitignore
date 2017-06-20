@@ -1,3 +1,4 @@
 /.idea
 *.iml
 *target
+/store-server/src/main/webapp/img/store

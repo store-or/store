@@ -8,4 +8,5 @@
     <mapping path="/js/*" exclude="true"/>
     <mapping path="/img/*" exclude="true"/>
     <mapping path="/css/*" exclude="true"/>
+    <mapping path="/param/reload" exclude="true"/>
 </sitemesh>

@@ -15,22 +15,22 @@
 <header id="dz_main_header" class="clearfix">
     <div class="container">
         <div id="logo">
-            <a href="${absoluteContextPath}/index"><img src="${absoluteContextPath}/img/u74.png" alt=""/></a>
+            <a href="${absoluteContextPath}/index">${SystemConfig.company!""}</a>
         </div>
         <nav>
             <ul id="main_menu">
                 <li for="index"><a href="${absoluteContextPath}/index"><span>Home</span>首页</a></li>
                 <li for="product"><a href="${absoluteContextPath}/product/index"><span>Products</span>全部产品</a></li>
-                <li for="about"><a href="${absoluteContextPath}/about/index"><span>xxx's Story</span>关于我们</a></li>
+                <li for="about"><a href="${absoluteContextPath}/about/index"><span>${SystemConfig.company!""}'s Story</span>关于${SystemConfig.company!""}</a></li>
                 <li for="contact"><a href="${absoluteContextPath}/contact/index"><span>Contact</span>联系我们</a></li>
             </ul>
         </nav>
         <div class="Contact-info">
             <p>
-                <img src="${absoluteContextPath}/img/phone.png" alt=""/><b>400-988-900</b>
-                <a href=""><img src="${absoluteContextPath}/img/tmall.png" alt=""/></a>
+                <img src="${absoluteContextPath}/img/phone.png" alt=""/><b>${CompanyConfig.phone!""}</b>
+                <a href="${CompanyConfig.weibo!""}"><img src="${absoluteContextPath}/img/sina.png" alt=""/></a>
                 <a href=""><img src="${absoluteContextPath}/img/weix.png" alt=""/></a>
-                <a href=""><img src="${absoluteContextPath}/img/sina.png" alt=""/></a>
+                <a href="${CompanyConfig.tmall!""}"><img src="${absoluteContextPath}/img/tmall.png" alt=""/></a>
             </p>
         </div>
     </div>
@@ -40,8 +40,7 @@
     <div class="container">
         <div class="row">
             <div class="span12 footer_copyright">
-                <div><img src="${absoluteContextPath}/img/u74.png" alt=""></div>
-                <p>©2011-2017 Baicaowei All Rights Reserved. xxxx食品有限公司版权所有 | 浙ICP备14038051号-1</p>
+                <p>${SystemConfig.copyright!""}</p>
             </div>
         </div>
     </div>

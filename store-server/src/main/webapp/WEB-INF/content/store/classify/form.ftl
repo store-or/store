@@ -13,6 +13,7 @@
                 <#include "../../message.ftl"/>
             </div>
             <form class="form-horizontal" id="classifyForm" method="post" action="${absoluteContextPath}/classify/<#if classify.id??>modify<#else>save</#if>">
+                <input type="text" class="hide" />
             <#if classify.id??>
                 <input  type="hidden" name="id"  class="form-control" value="${classify.id?c}">
             </#if>
