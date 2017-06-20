@@ -4976,3 +4976,27 @@ aside.sidebar .flickr_stream img {
 .widget-active a{
 	color:#fff !important;
 }
+.wx-code .qrcode {
+    position: absolute;
+    z-index: 99;
+    top: 40px;
+    left: -30px;
+    width: 7.5rem;
+    max-width: none;
+    height: 7.5rem;
+    transform: scale(0);
+    transform-origin: top;
+    opacity: 0;
+    border: 1px solid #ddd;
+    border-radius: .25rem;
+    -webkit-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+.wx-code:hover img {
+    transform: scale(1);
+    opacity: 1;
+}
+a.wx-code {
+    position: relative;
+}

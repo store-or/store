@@ -36,20 +36,22 @@
             <h5>精品推荐</h5>
         </div>
     </header>
-    <#if recommends?? && recommends?size gt 0>
+
         <div class="dzen_section_content">
             <div class="dzen_container">
                 <div class="dzen_column_DD_span12 " style="width:780px;">
                     <div class="slider-view">
-                        <#list recommends as recommend>
-                            <div class="slide"><a href="${absoluteContextPath}/product/${recommend.product.id}"><img src="<@display.pictureUrl recommend.product.cover!''/>"><p><strong>${recommend.product.name}</strong><span>${recommend.product.introduction!""}</span></p></a></div>
-                        </#list>
+                        <#if recommends?? && recommends?size gt 0>
+                            <#list recommends as recommend>
+                                <div class="slide"><a href="${absoluteContextPath}/product/${recommend.product.id}"><img src="<@display.pictureUrl recommend.product.cover!''/>"><p><strong>${recommend.product.name}</strong><span>${recommend.product.introduction!""}</span></p></a></div>
+                            </#list>
+                        </#if>
                     </div>
-                    <div class="dzen_column_DD_span12 center_aligned" style="margin-top:15px;"> <button class="btn-default btn-big" onclick="locacation.href='${absoluteContextPath}/product/list'">查看全部</button></div>
+                    <div class="dzen_column_DD_span12 center_aligned" style="margin-top:15px;"> <button class="btn-default btn-big" onclick="location.href='${absoluteContextPath}/product/list'">查看全部</button></div>
                 </div>
             </div>
         </div>
-    </#if>
+
 
 </section>
 <footer id="dz_main_footer">
@@ -62,7 +64,10 @@
                     <div class="contact_info_widget">
                         <p>
                             <a href="${CompanyConfig.weibo!""}"><img src="${absoluteContextPath}/img/sina-big.png" alt=""/></a>
-                            <a href=""><img src="${absoluteContextPath}/img/weix-big.png" alt=""/></a>
+                            <a href="javascript:void(0)" class="wx-code">
+                                <img src="${absoluteContextPath}/img/weix-big.png" alt=""/>
+                                <img src="<@display.pictureUrl CompanyConfig.wechat!''/>" class="qrcode"/>
+                            </a>
                             <a href="${CompanyConfig.tmall!""}"><img src="${absoluteContextPath}/img/tmall-big.png" alt=""/></a>
                         </p>
                         <p>订购热线：${CompanyConfig.phone!""}</p>
