@@ -170,6 +170,7 @@ input[type="text"],input[type="password"],input[type="email"], textarea, select 
 
 .product .dzen_container [class*="column_DD_span"] {float:left;margin-right:1.8%}
 .product .cur{float:left}
+.aboutUs .dzen_container [class*="column_DD_span"] {float:left;}
 
 .dzen_column_DD_span12 {
 	width: 100%;

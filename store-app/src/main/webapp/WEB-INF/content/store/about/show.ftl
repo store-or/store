@@ -11,9 +11,6 @@
 </script>
 
 <div>
-    <h4>
-        <span>${menu.name!""}</span>
-    </h4>
     <div class="margin_bottom">
         <div id="aboutContent">
             ${menu.publishContent!""}

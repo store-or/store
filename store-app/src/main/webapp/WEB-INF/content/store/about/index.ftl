@@ -36,7 +36,7 @@
 </head>
 <body>
 <div id="dz_header_spacer"></div>
-<section class="dzen_section_DD ">
+<section class="dzen_section_DD aboutUs">
     <div class="dzen_section_content">
         <div class="dzen_container">
             <div class="sidebar-widget-heading">
