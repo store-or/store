@@ -41,7 +41,7 @@
             if (menu.hasClass("active-line")) {
                 return;
             }
-            var lastMenu = menu.parent().children(".active-line");
+            var lastMenu = $(obj).parent().parent().find(".active-line");
             lastMenu.html("<a class='text-hidden'  href='javascript:void(0)' >" + lastMenu.text() + "</a>").removeClass("active-line");
             menu.html(menu.text()).addClass("active-line");
             ajaxContent(menuId);
@@ -139,6 +139,7 @@
                     <ul class="list-unstyled mailbox-nav">
                     <#if menus??>
                         <#list menus as menu>
+                            <div style="position: relative;">
                             <li  class="text-hidden"  id="layout-menu-${menu.id?c}" onclick="showContent(this, ${menu.id?c})" title="${(menu.name!"")?xhtml}">
                                 <a  class="text-hidden"  href="javascript:void(0)" >${(menu.name!"")?xhtml}</a>
                             </li>
@@ -158,6 +159,7 @@
                                     <li onclick="delMenu(${(menu.id?c)!});"><a href="javascript:void(0);" >删除</a></li>
                                 </@sec.authorize>
                             </ul>
+                            </div>
                         </#list>
                     </#if>
                     </ul>
