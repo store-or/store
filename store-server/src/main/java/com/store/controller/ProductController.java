@@ -7,6 +7,7 @@ import com.core.json.JsonResponse;
 import com.core.util.ValidatorUtil;
 import com.core.web.freemarker.FreemarkerParseException;
 import com.google.common.collect.Lists;
+import com.param.PortalConfigParam;
 import com.store.domain.ClassifyDO;
 import com.store.domain.product.ProductDO;
 import com.store.domain.product.Status;
@@ -40,6 +41,7 @@ public class ProductController extends BaseController {
     public String list(Model model) {
         listModel(new Page<ProductDO>(), null, model);
         model.addAttribute("classifies", classifyService.listByIndexAsc());
+        model.addAttribute("frontUrl", PortalConfigParam.storeFrontUrl);
         return "/store/product/list";
     }
 

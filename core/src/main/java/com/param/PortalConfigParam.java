@@ -10,6 +10,9 @@ import org.springframework.stereotype.Component;
 @Component
 @ConfigParam(type = "systemConfig")
 public class PortalConfigParam {
+    @Param(key = "storeFrontUrl")
+    public static String storeFrontUrl = "http://localhost:8081/front";
+
     @Param(key = "httpFileDir", description = "httpd的文件目录")
     public static String fileOptDir  = "";
 

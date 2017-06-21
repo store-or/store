@@ -56,7 +56,7 @@
                             </#if>
                         </@sec.authorize>
                         <span style="color:#999;">|</span>
-                        <a style="cursor:pointer;" href="javascript:void(0)">预览</a>
+                        <a style="cursor:pointer;" href="${frontUrl}/product/${product.id?c}" target="_blank">预览</a>
                         <@sec.authorize action="product-del">
                             <span style="color:#999;">|</span>
                             <a style="cursor:pointer;" onclick="del(${product.id?c});">删除</a>

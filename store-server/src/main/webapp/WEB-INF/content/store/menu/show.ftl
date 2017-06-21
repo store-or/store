@@ -10,22 +10,24 @@
     });
 </script>
 
-
-<span>
-${menu.name!""}<#if menu.currentVersion?? && menu.publishVersion?? && menu.currentVersion==menu.publishVersion>已发布<#else>未发布</#if>
-</span>
-<div style="float:right">
-    <a class="m-b-xxs btn btn-primary m-b-xs" data-toggle="modal" data-target="#myModal" onclick="toEditMenu(${menu.id?c})">
-        编辑
-    </a>
+<div class="clearfix form-title">
+    <h2 class="panel-title" style="font-size: 20px;">${menu.name!""}</h2>
+    <span style="margin-left: 10px;background-color: #cccccc;font-size: 15px;color: white;">
+        <#if menu.currentVersion?? && menu.publishVersion?? && menu.currentVersion==menu.publishVersion>已发布<#else>未发布</#if>
+    </span>
+    <div style="float:right;">
+        <a class="m-b-xxs btn btn-primary m-b-xs" data-toggle="modal" data-target="#myModal" onclick="toEditMenu(${menu.id?c})">
+            编辑
+        </a>
     <#if !menu.publishVersion?? || menu.currentVersion != menu.publishVersion>
-    <a id="aPublish" class="m-b-xxs btn m-b-xs btn-primary" data-toggle="modal" data-target="#myModal" onclick="publicVersion(${menu.id?c})">
-        发布
-    </a>
+        <a id="aPublish" class="m-b-xxs btn m-b-xs btn-primary" data-toggle="modal" data-target="#myModal" onclick="publicVersion(${menu.id?c})">
+            发布
+        </a>
     </#if>
+    </div>
 </div>
-
-<ul class="cd-gallery post drag">
+<div class="d-line" style="margin: 10px auto;"></div>
+<ul class="cd-gallery post drag" style="padding-left: 20px;">
     <div id="showContent">
         ${menu.currentContent!""}
     </div>

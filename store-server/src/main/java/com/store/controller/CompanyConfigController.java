@@ -131,7 +131,7 @@ public class CompanyConfigController extends BaseController {
         }
 
         public List<PortalParam> list() {
-            return Lists.newArrayList(phone, address, wechat, weibo, tmall, aboutUs, introduction, contactUs, contactUs);
+            return Lists.newArrayList(phone, address, wechat, weibo, tmall, aboutUs, introduction, contactUs, contactUsContent);
         }
     }
 }

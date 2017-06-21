@@ -37,20 +37,19 @@
             <div class="form-group">
                 <div class="col-sm-3">
                     <span>
-                        <h3>${menu.name!""}
-                            <label class="label label-primary" style="font-size: 12px; font-weight: 100;padding:5px 10px;color: white"></label>
-                        </h3>
+                        <h2 class="panel-title" style="font-size: 20px;">${menu.name!""}</h2>
                     </span>
                 </div>
             </div>
         <#else>
-            <div class="form-group">
-                <label for="input-help-block" class="col-sm-2 control-label" style="min-height: 0px;"><span class="txt-impt">*</span>菜单名称:</label>
-                <div class="col-sm-4">
+            <div class="form-group" style="margin-right: 0px;">
+                <label for="input-help-block" class="col-sm-2 control-label" style="text-align: left;"><span class="txt-impt">*</span>菜单名称:</label>
+                <div class="col-sm-4" style="margin-left: -100px;">
                     <input type="text" class="form-control" name="name" value="${(menu.name!'')?xhtml}">
                 </div>
             </div>
         </#if>
+        <div class="d-line" style="margin: 15px auto;"></div>
         <div class="form-group">
             <div class="col-sm-12" style="position:relative;z-index:99;">
                 <script id="menuEditContainer" name="currentContent" type="text/plain">
@@ -58,6 +57,7 @@
                 </script>
             </div>
         </div>
+        <div class="d-line" style="margin: 15px auto;"></div>
         <div class="form-group" style="margin-bottom: 0;">
             <div class="col-sm-offset-2 col-sm-10">
                 <button type="button" class="btn btn-primary" onclick="save('PUBLIC')" style="float: right;margin-left: 10px">发布</button>
@@ -93,5 +93,4 @@
             }
         });
     }
-
 </script>

@@ -2,6 +2,33 @@
 <html>
 <head>
     <title>页面配置</title>
+    <script type="text/javascript">
+        window.UEDITOR_HOME_URL="${absoluteContextPath}/js/ueditor/";
+    </script>
+
+    <script type="text/javascript" src="${absoluteContextPath}/js/ueditor/ueditor.config.js"></script>
+    <script type="text/javascript" src="${absoluteContextPath}/js/ueditor/ueditor.all.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="${absoluteContextPath}/js/ueditor/lang/zh-cn/zh-cn.js"></script>
+    <!-- 实例化编辑器 -->
+    <script type="text/javascript">
+        var ue = UE.getEditor('configContainer',{
+            autoHeightEnabled: true,
+            autoFloatEnabled: true,
+            initialFrameHeight:300,
+            allowDivTransToP:false,
+            toolbars: [
+                ['source','fullscreen', 'undo', 'redo', 'bold','cleardoc','fontfamily','fontsize','paragraph','simpleupload','insertimage','wordimage',
+                    'link','spechars','searchreplace','justifyleft','justifyright','justifycenter','justifyjustify','forecolor',
+                    'rowspacingtop','rowspacingbottom','directionalityltr','directionalityrtl','imagenone','imageleft','imageright',
+                    'attachment','imagecenter','lineheight','autotypeset','customstyle','touppercase','tolowercase','inserttable',
+                    'anchor','bold','indent','italic','underline','strikethrough','subscript','fontborder','superscript',
+                    'formatmatch','pasteplain','horizontal','removeformat','time','date','unlink','insertrow','insertcol',
+                    'mergeright','mergedown','deleterow','deletecol','splittorows','splittocols','splittocells','deletecaption','inserttitle',
+                    'mergecells','deletetable','insertparagraphbeforetable','preview']
+            ]
+        });
+    </script>
+
     <script>
         function uploadWechat(obj) {
             $(obj).upload({
@@ -145,7 +172,10 @@
                                     <label for="name" class="col-sm-2 control-label">联系我们:</label>
                                     <div class="col-sm-10">
                                         <input type="hidden" class="hide" name="contactUsContent.id" value="${config.contactUsContent.id?c}" >
-                                        <textarea rows="20" class="form-control" name="contactUsContent.value">${(config.contactUsContent.value!'')?xhtml}</textarea>
+                                        <script id="configContainer" name="contactUsContent.value" type="text/plain">
+                                        ${config.contactUsContent.value!""}
+                                        </script>
+                                        <#--<textarea rows="20" class="form-control" name="contactUsContent.value">${(config.contactUsContent.value!'')?xhtml}</textarea>-->
                                     </div>
                                 </div>
                             </div>
