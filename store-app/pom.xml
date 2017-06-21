@@ -216,6 +216,22 @@
             <artifactId>dozer</artifactId>
         </dependency>
 
+        <!--Ueditor编辑器-->
+        <dependency>
+            <groupId>com.baidu.ueditor</groupId>
+            <artifactId>ueditor</artifactId>
+            <version>1.1.1</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/src/main/webapp/WEB-INF/lib/ueditor-1.1.2.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20110202</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/src/main/webapp/WEB-INF/lib/json.jar</systemPath>
+        </dependency>
+
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>

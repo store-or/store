@@ -1,12 +1,16 @@
 package com.store.controller;
 
 import com.core.controller.AbstractController;
+import com.core.json.JsonResponse;
+import com.core.web.freemarker.FreeMarkerUtil;
 import com.core.web.freemarker.FreemarkerEnumLoader;
+import com.core.web.freemarker.FreemarkerParseException;
 import com.param.CompanyConfigParam;
 import com.param.PortalConfigParam;
 import freemarker.ext.beans.BeansWrapper;
 import freemarker.template.TemplateHashModel;
 import freemarker.template.TemplateModelException;
+import org.codehaus.jackson.node.ObjectNode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -35,5 +39,9 @@ public abstract class BaseController extends AbstractController {
         } catch (TemplateModelException e) {
             logger.error("ADD_CompanyConfigParam_failed", e);
         }
+    }
+
+    protected String jsonResponseView(String view, Model model) throws FreemarkerParseException {
+        return new JsonResponse<ObjectNode>(JsonResponse.CODE_SUCCESS, JsonResponse.MSG_SUCCESS, FreeMarkerUtil.render(view, model)).toString();
     }
 }
