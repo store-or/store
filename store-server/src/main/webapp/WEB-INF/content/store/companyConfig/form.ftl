@@ -68,12 +68,7 @@
                         success: function (data) {
                             if (data.returnCode == 1) {
                                 alertMsg("页面参数", "修改成功");
-                                <#if SystemConfig.storeFrontUrl!="">
-                                    $.customAjax({
-                                        url: "${SystemConfig.storeFrontUrl!""}/param/reload",
-                                        loading:true
-                                    });
-                                </#if>
+                                $("#reloadAppParam").attr("src", "${SystemConfig.storeFrontUrl!""}/param/reload");
                             } else {
                                 $.showMessage({type: "error", message: data.returnMsg});
                             }
@@ -86,6 +81,7 @@
 </head>
 <path><li>前端编排</li><li>页面配置</li></path>
 <body>
+<iframe src="" class="hide" id="reloadAppParam"></iframe>
 <div class="page-inner">
     <div id="main-wrapper">
         <div id="form-content">

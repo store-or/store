@@ -37,18 +37,13 @@
                 initialState:'expanded',
                 expandable: true
             });
-            <#if SystemConfig.storeFrontUrl!="">
-                $.customAjax({
-                    url: "${SystemConfig.storeFrontUrl!""}/param/reload",
-                    loading:true
-                });
-            </#if>
         });
 
     </script>
 </head>
 <path><li>系统管理</li><li>系统参数</li></path>
 <body>
+<iframe src="${SystemConfig.storeFrontUrl!""}/param/reload" class="hide"></iframe>
 <div id="main-wrapper">
     <div class="row">
         <div class="col-md-12">

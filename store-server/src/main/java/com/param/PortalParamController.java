@@ -4,6 +4,9 @@ import com.core.controller.AbstractController;
 import com.core.json.JsonResponse;
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.ListMultimap;
+import freemarker.ext.beans.BeansWrapper;
+import freemarker.template.TemplateHashModel;
+import freemarker.template.TemplateModelException;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -40,6 +43,12 @@ public class PortalParamController extends AbstractController {
             paramMap.put(param.getType(), param);
         }
         modelMap.addAttribute("paramMap", paramMap);
+        try {
+            TemplateHashModel staticsModel = BeansWrapper.getDefaultInstance().getStaticModels();
+            modelMap.addAttribute("SystemConfig", staticsModel.get(PortalConfigParam.class.getName()));
+        } catch (TemplateModelException e) {
+            logger.error("ADD_ConfigParam_failed", e);
+        }
         return "/param/list";
     }
 

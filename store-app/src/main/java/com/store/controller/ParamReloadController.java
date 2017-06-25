@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 /**
  * Created by laizy on 2017/6/20.
  */
-@Controller()
+@Controller
 @RequestMapping("/param")
 public class ParamReloadController {
     @Autowired
