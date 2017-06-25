@@ -7,7 +7,6 @@
     <meta name="renderer" content="webkit|ie-comp|ie-stand">
     <title>store-<sitemesh:write property="title"/></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-    <link rel="shortcut icon" href="${absoluteContextPath}/img/ott.ico" type="image/x-icon">
     <link href="${absoluteContextPath}/css/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="${absoluteContextPath}/css/layers.min.css" rel="stylesheet" type="text/css">
     <link href="${absoluteContextPath}/css/layers/dark-layer.css" rel="stylesheet" type="text/css">

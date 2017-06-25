@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-    <link rel="shortcut icon" href="${absoluteContextPath}/img/ott.ico" type="image/x-icon">
     <link href="${absoluteContextPath}/css/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="${absoluteContextPath}/css/layers.min.css" rel="stylesheet" type="text/css">
     <title>商城后台</title>
@@ -17,7 +16,7 @@
 <div id="page-signup-bg">
     <div id="box"></div>
     <div class="login-box">
-        <a href="${absoluteContextPath}/login" class="logo-name  text-center m-t-xs"><img style=" width: 280px" src="${absoluteContextPath}/img/cms.png"></a>
+        <a href="${absoluteContextPath}/login" class="logo-name  text-center m-t-xs">商城后台</a>
         <form class="m-t-md" action="${absoluteContextPath}/login" method="post">
             <input type="hidden" value="~!@#$%^*">
             <div class="form-group">

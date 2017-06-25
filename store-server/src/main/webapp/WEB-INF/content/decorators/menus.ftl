@@ -4,7 +4,7 @@
 </#macro>
 <div class="navbar-inner">
     <div class="logo-box">
-        <a href="${absoluteContextPath}/login" class="logo-text"><span><img src="${absoluteContextPath}/img/logo.png"></span></a>
+        <a href="${absoluteContextPath}/login" class="logo-text"><span>商城后台</span></a>
     </div><!-- Logo Box -->
     <div class="topmenu-outer">
         <div class="top-menu" id="top-menu">

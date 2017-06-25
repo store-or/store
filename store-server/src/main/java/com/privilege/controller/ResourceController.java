@@ -8,6 +8,7 @@ import com.core.util.ZipUtil;
 import com.privilege.security.ResourceCache;
 import com.privilege.service.ResourceService;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang3.SystemUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.FieldError;
@@ -29,7 +30,6 @@ import java.util.List;
 @RequestMapping("/privilege/resource")
 public class ResourceController extends AbstractController {
 
-    private static final String RESOURCE_TMP_DIR = "/home/ott/resource";
 
     @Autowired
     private ResourceService resourceService;
@@ -43,7 +43,7 @@ public class ResourceController extends AbstractController {
             return ValidatorUtil.errorToJson(JsonResponse.CODE_FAILURE, JsonResponse.MSG_SUCCESS, list).toString();
         }
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
-        String tmpDirPath =  RESOURCE_TMP_DIR + "/" + simpleDateFormat.format(new Date());
+        String tmpDirPath =  SystemUtils.getJavaIoTmpDir().getAbsolutePath() + "/" + simpleDateFormat.format(new Date());
         try {
             File tmpZipFile = new File(tmpDirPath, file.getOriginalFilename());
             if (!tmpZipFile.exists()) {

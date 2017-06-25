@@ -1,0 +1,26 @@
+<resource>
+    <name>classify</name>  <!--不可更改,除非手工操作数据库-->
+    <description>分类管理</description>
+    <actions>
+        <action>
+            <name>classify-list</name> <!--不可更改-->
+            <uri>/classify/list;/classify/ajaxList</uri>
+            <method>*</method>
+            <description>分类查询</description>
+        </action>
+        <action>
+            <name>classify-operate</name>
+            <uri>/classify/save;/classify/toAdd;/classify/toModify;/classify/modify;/classify/modifyIndex;</uri>
+            <method>*</method>
+            <description>分类修改</description>
+        </action>
+        <action>
+            <name>classify-del</name>
+            <uri>
+                /classify/del;
+            </uri>
+            <method>*</method>
+            <description>分类删除</description>
+        </action>
+    </actions>
+</resource>
