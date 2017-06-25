@@ -7,8 +7,12 @@ import com.core.util.ValidatorUtil;
 import com.core.web.freemarker.FreeMarkerUtil;
 import com.core.web.freemarker.FreemarkerEnumLoader;
 import com.core.web.freemarker.FreemarkerParseException;
+import com.param.CompanyConfigParam;
 import com.param.PortalConfigParam;
 import com.privilege.security.SecurityContext;
+import freemarker.ext.beans.BeansWrapper;
+import freemarker.template.TemplateHashModel;
+import freemarker.template.TemplateModelException;
 import org.codehaus.jackson.node.ObjectNode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
@@ -30,6 +34,12 @@ public abstract class BaseController extends AbstractController {
     @ModelAttribute
     public void addEnumToFreemarker(Model model) {
         freemarkerEnumLoader.registerToModel(model);
+        try {
+            TemplateHashModel staticsModel = BeansWrapper.getDefaultInstance().getStaticModels();
+            model.addAttribute("SystemConfig", staticsModel.get(PortalConfigParam.class.getName()));
+        } catch (TemplateModelException e) {
+            logger.error("ADD_ConfigParam_failed", e);
+        }
     }
 
     protected String jsonResponseView(String view, Model model) throws FreemarkerParseException {

@@ -37,6 +37,12 @@
                 initialState:'expanded',
                 expandable: true
             });
+            <#if SystemConfig.storeFrontUrl!="">
+                $.customAjax({
+                    url: "${SystemConfig.storeFrontUrl!""}/param/reload",
+                    loading:true
+                });
+            </#if>
         });
 
     </script>

@@ -68,6 +68,12 @@
                         success: function (data) {
                             if (data.returnCode == 1) {
                                 alertMsg("页面参数", "修改成功");
+                                <#if SystemConfig.storeFrontUrl!="">
+                                    $.customAjax({
+                                        url: "${SystemConfig.storeFrontUrl!""}/param/reload",
+                                        loading:true
+                                    });
+                                </#if>
                             } else {
                                 $.showMessage({type: "error", message: data.returnMsg});
                             }
