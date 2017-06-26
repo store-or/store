@@ -14,7 +14,7 @@
 
             });
             $(window).scroll(function(){
-                var currentTop = $(window).scrollTop() + 100;
+                var currentTop = $(window).scrollTop() + 200;
                 var currentClassifyId;
                 var first = false;
                 $("div[id^='classify_']").each(function(index, element){
@@ -60,6 +60,7 @@
                                     <div class="he_border1_caption">
                                         <a class="he_border1_caption_a" href="${absoluteContextPath}/product/${product.id?c}" target="_blank"></a>
                                     </div>
+                                    <div class="Product-state state-${product.tag}"><@display.enum ProductTag.values() product.tag/></div>
                                 </div>
                                 <div class="dzen_column_DD_span12">
                                     <div class=" news-cuolumn ">

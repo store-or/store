@@ -19,3 +19,10 @@
         </#if>
     </ul>
 </#macro>
+<#macro enum list name>
+    <#if name??>
+        <#list list as tmp>
+            <#if tmp==name>${tmp.alias}</#if>
+        </#list>
+    </#if>
+</#macro>

@@ -5001,3 +5001,26 @@ aside.sidebar .flickr_stream img {
 a.wx-code {
     position: relative;
 }
+.Product-state{
+    position: absolute;
+    top:0px;
+    right:0;
+    width:50px;
+    height:30px;
+    line-height: 30px;
+    text-align: center;
+    color:#fff;
+    z-index: 9999;
+}
+.state-NEW{
+    background:#62cf00;
+}
+.state-HOT{
+    background:#d23200;
+}
+.state-RECOMMEND{
+    background:#d23200;
+}
+.state-FACIAL{
+    background:#d23200;
+}
