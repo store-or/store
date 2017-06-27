@@ -1,0 +1,26 @@
+<resource>
+    <name>banner</name>  <!--不可更改,除非手工操作数据库-->
+    <description>banner管理</description>
+    <actions>
+        <action>
+            <name>banner-list</name> <!--不可更改-->
+            <uri>/banner/list;/banner/ajaxList</uri>
+            <method>*</method>
+            <description>banner查询</description>
+        </action>
+        <action>
+            <name>banner-operate</name>
+            <uri>/banner/save;/banner/toAdd;/banner/toModify;/banner/modify;/banner/modifyIndex;</uri>
+            <method>*</method>
+            <description>banner修改</description>
+        </action>
+        <action>
+            <name>banner-del</name>
+            <uri>
+                /banner/del;
+            </uri>
+            <method>*</method>
+            <description>banner删除</description>
+        </action>
+    </actions>
+</resource>

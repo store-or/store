@@ -1,0 +1,26 @@
+<resource>
+    <name>menu</name>  <!--不可更改,除非手工操作数据库-->
+    <description>菜单管理</description>
+    <actions>
+        <action>
+            <name>menu-list</name> <!--不可更改-->
+            <uri>/menu/list;/menu/ajaxContent</uri>
+            <method>*</method>
+            <description>菜单查询</description>
+        </action>
+        <action>
+            <name>menu-operate</name>
+            <uri>/menu/save;/menu/toAdd;/menu/toModify;/menu/publicVersion;/menu/updateIndex;</uri>
+            <method>*</method>
+            <description>菜单修改</description>
+        </action>
+        <action>
+            <name>menu-del</name>
+            <uri>
+                /menu/del;
+            </uri>
+            <method>*</method>
+            <description>菜单删除</description>
+        </action>
+    </actions>
+</resource>

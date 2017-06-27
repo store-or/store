@@ -1,0 +1,26 @@
+<resource>
+    <name>recommend</name>  <!--不可更改,除非手工操作数据库-->
+    <description>推荐位管理</description>
+    <actions>
+        <action>
+            <name>recommend-list</name> <!--不可更改-->
+            <uri>/recommend/list;/recommend/ajaxList</uri>
+            <method>*</method>
+            <description>推荐位查询</description>
+        </action>
+        <action>
+            <name>recommend-operate</name>
+            <uri>/recommend/save;/recommend/toAdd;/product/toChoose;/product/ajaxChooseProducts;/recommend/modifyIndex;</uri>
+            <method>*</method>
+            <description>推荐位修改</description>
+        </action>
+        <action>
+            <name>recommend-del</name>
+            <uri>
+                /recommend/del;
+            </uri>
+            <method>*</method>
+            <description>推荐位删除</description>
+        </action>
+    </actions>
+</resource>

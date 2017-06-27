@@ -1,0 +1,12 @@
+<resource>
+    <name>companyConfig</name>  <!--不可更改,除非手工操作数据库-->
+    <description>配置管理</description>
+    <actions>
+        <action>
+            <name>company-config</name> <!--不可更改-->
+            <uri>/companyConfig/config;/companyConfig/modify</uri>
+            <method>*</method>
+            <description>配置管理</description>
+        </action>
+    </actions>
+</resource>

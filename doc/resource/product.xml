@@ -1,0 +1,28 @@
+<resource>
+    <name>product</name>  <!--不可更改,除非手工操作数据库-->
+    <description>产品管理</description>
+    <actions>
+        <action>
+            <name>product-list</name> <!--不可更改-->
+            <uri>/product/list;/product/ajaxList</uri>
+            <method>*</method>
+            <description>产品查询</description>
+        </action>
+        <action>
+            <name>product-operate</name>
+            <uri>/product/save;/product/toAdd;/product/toModify;/product/modify;/product/putOn;
+                /product/putOff;/product/setTop;/product/unSetTop;
+            </uri>
+            <method>*</method>
+            <description>产品修改</description>
+        </action>
+        <action>
+            <name>product-del</name>
+            <uri>
+                /product/del;
+            </uri>
+            <method>*</method>
+            <description>产品删除</description>
+        </action>
+    </actions>
+</resource>

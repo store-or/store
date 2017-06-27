@@ -25,8 +25,8 @@
                     </ul>
                 </li>
             </@sec.authorize>
-            <@sec.authorize anyAction="company-config,recommend-list,banner-list">
-                <li class="dropdown" for=",companyConfig-config,recommend-list,banner-list," hasChild>
+            <@sec.authorize anyAction="company-config,recommend-list,banner-list,menu-list">
+                <li class="dropdown" for=",companyConfig-config,recommend-list,banner-list,menu-list," hasChild>
                     <a href="javascript:void(0)" data-toggle="dropdown" class="dropdown-toggle waves-effect waves-button "  >
                         前端编排<i class="fa fa-angle-down m-l-xxs"></i>
                     </a>
