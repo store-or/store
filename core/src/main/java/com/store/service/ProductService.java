@@ -85,7 +85,7 @@ public class ProductService extends TransactionBaseService<ProductDO, Long> {
         executeSql(sql, classifyId);
         String classify = ProductDO.CLASSIFY_ID_SPLIT + classifyId + ProductDO.CLASSIFY_ID_SPLIT;
         // 删除精品推荐
-        sql = "delete from recommend r inner join product p on r.product_id=p.id where classify_ids ~ ?";
+        sql = "delete from recommend r where exists(select id from product where id=r.product_id and classify_ids ~ ?)";
         executeSql(sql, classify);
         // 删除产品
         sql = "delete from product where classify_ids ~ ?";

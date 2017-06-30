@@ -109,7 +109,7 @@
         }
     </script>
 </head>
-<path><li>产品管理</li><li><a href="${absoluteContextPath}/product/list">产品管理</a></li><li>添加视频</li></path>
+<path><li>产品管理</li><li><a href="${absoluteContextPath}/product/list">产品管理</a></li><li><#if product.id??>编辑产品<#else>添加产品</#if></li></path>
 <body>
     <div class="page-inner">
         <div id="main-wrapper">
