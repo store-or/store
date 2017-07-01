@@ -39,7 +39,9 @@
         </div>
     </div>
 </header>
-<sitemesh:write property="body"/>
+<div style="min-height: 639px;;">
+    <sitemesh:write property="body"/>
+</div>
 <div id="footer_copyright">
     <div class="container">
         <div class="row">

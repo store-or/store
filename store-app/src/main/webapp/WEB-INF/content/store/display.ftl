@@ -5,7 +5,7 @@
 </#macro>
 
 <#macro banner banners>
-    <ul class="bxslider" style="height:500px;">
+    <ul class="bxslider" style="height:300px;">
         <#if banners?? && banners?size gt 0>
             <#list banners as tmp>
                 <li>

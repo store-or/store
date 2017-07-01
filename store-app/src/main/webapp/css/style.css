@@ -1326,6 +1326,7 @@ th {
 #logo {
 	float: left;
 	margin-top: 10px;
+	margin-left: 220px;
 }
 
 #logo a {
@@ -1334,14 +1335,15 @@ th {
 
 .Contact-info {
 	float: right;
-	height: 65px;
-	line-height: 65px;
+	height: 60px;
+	line-height: 60px;
 }
 
 .Contact-info b {
 	margin: 0 5px;
 	font-size: 18px;
 	vertical-align: middle;
+	color: #535353;
 }
 
 .Contact-info p {
@@ -1359,22 +1361,25 @@ nav > ul {
 	float: left;
 	position: relative;
 	padding-left: 50px;
+	height: 60px;
 }
 
 nav > ul > li {
 	float: left;
-	line-height: 20px;
+	line-height: 16px;
 	margin: 0 5px;
-	padding: 11px;
+	padding: 12px;
+	padding-top: 13px;
 }
 
 nav > ul > li a {
 	color: #333;
 	font-family: Roboto;
 	font-weight: 300;
-	font-size: 13px;
+	font-size: 14px;
 	text-align: center;
 	display: inline-block;
+	color: #535353;
 }
 
 nav > ul > li > a {
@@ -1386,8 +1391,7 @@ nav > ul > li a:hover {
 }
 
 nav > ul > li:hover {
-	color: #660033;
-	border-bottom: 3px solid #660033;
+	border-bottom: 3px solid #ff4530;
 }
 
 nav > ul > li span {
@@ -1502,7 +1506,7 @@ nav > ul > .current-menu-item ,
 nav > ul > .current-post-ancestor,
 nav > ul > .current-menu-ancestor {
 	color: #660033;
-	border-bottom: 3px solid #660033;
+	border-bottom: 3px solid #ff4530;
 }
 
 /*-------- 4.2. Title/Breadcrumbs Bar --------*/
