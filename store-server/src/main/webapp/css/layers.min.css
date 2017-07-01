@@ -4894,7 +4894,7 @@ body.small-sidebar.page-horizontal-bar.page-sidebar-fixed .accordion-menu>li>ul 
     position: absolute;
     right: 5px;
     top: 5px;
-    z-index: 9999;
+    z-index: 99;
     cursor: pointer;
 }
 .tabpanel-box .nav-tabs>li a{
@@ -5177,4 +5177,12 @@ a.waves-effect .waves-ripple {
     background:#3ca9fe;
     padding:5px 15px;
     color:#fff!important
+}
+.file-top {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    z-index: 99;
+    cursor: pointer;
+    color: white;
 }

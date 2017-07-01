@@ -200,6 +200,9 @@
                                                                 <div class="div1">
                                                                     <img src="<#if (picture)?index_of('http')==-1>${uploadFileContext}/</#if>${picture}"/>
                                                                     <input type="file" title='选择文件' onchange="changePicture(this);" class="inputstyle">
+                                                                    <div class="file-top <#if picture_index == 0>hide</#if>" onclick="if($(this).parents('#pictureDiv').index() == 0) return;$('#pictures #pictureDiv:first').before($(this).parents('#pictureDiv'))">
+                                                                        <span>置顶</span>
+                                                                    </div>
                                                                     <div class="file-close" onclick="$(this).parents('#pictureDiv').remove();$('#addPicture_div').removeClass('hide');" >
                                                                         <span aria-hidden="true" class="icon-close text-danger text-md"></span>
                                                                     </div>
@@ -214,6 +217,9 @@
                                                 <div class="div1" >
                                                     <img />
                                                     <input type="file" title='选择文件' onchange="changePicture(this);" class="inputstyle">
+                                                    <div class="file-top" onclick="if($(this).parents('#pictureDiv').index() == 0) return;$('#pictures #pictureDiv:first').before($(this).parents('#pictureDiv'))">
+                                                        <span>置顶</span>
+                                                    </div>
                                                     <div class="file-close" onclick="$(this).parents('#pictureDiv').remove();$('#addPicture_div').removeClass('hide');" >
                                                         <span aria-hidden="true" class="icon-close text-danger text-md"></span>
                                                     </div>
