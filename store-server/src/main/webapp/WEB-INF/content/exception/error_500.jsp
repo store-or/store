@@ -15,10 +15,8 @@
 <html>
 <head>
     <title>访问出错500</title>
-    <link rel="shortcut icon" href="<%=request.getContextPath()%>/img/ott.ico" type="image/x-icon">
     <meta content="width=device-width, initial-scale=1" name="viewport"/>
     <meta charset="UTF-8">
-    <link rel="shortcut icon" href="<%=request.getContextPath()%>/img/ott.ico" type="image/x-icon">
     <link href="<%=request.getContextPath()%>/css/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="<%=request.getContextPath()%>/css/layers.min.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery/jquery-1.8.2.min.js"></script>

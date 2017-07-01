@@ -41,7 +41,6 @@ public class ProductController extends BaseController {
     public String list(Model model) {
         listModel(new Page<ProductDO>(), null, model);
         model.addAttribute("classifies", classifyService.listByIndexAsc());
-        model.addAttribute("frontUrl", PortalConfigParam.storeFrontUrl);
         return "/store/product/list";
     }
 
@@ -60,6 +59,7 @@ public class ProductController extends BaseController {
         }
         productService.listWithClassify(page, HibernateUtil.buildPropertyFilters(search));
         model.addAttribute("page", page);
+        model.addAttribute("frontUrl", PortalConfigParam.storeFrontUrl);
     }
 
     @RequestMapping("/toAdd")
@@ -92,7 +92,7 @@ public class ProductController extends BaseController {
         setDefault(productDO);
         transform(productDO);
         productService.saveOrUpdate(productDO);
-        return JsonResponse.JSON_SUCCESS;
+        return new JsonResponse<Long>(JsonResponse.CODE_SUCCESS, JsonResponse.MSG_SUCCESS, productDO.getId()).toString();
     }
 
     @RequestMapping("/modify")
@@ -107,7 +107,7 @@ public class ProductController extends BaseController {
         setModify(productDO);
         transform(productDO);
         productService.saveOrUpdate(productDO);
-        return JsonResponse.JSON_SUCCESS;
+        return new JsonResponse<Long>(JsonResponse.CODE_SUCCESS, JsonResponse.MSG_SUCCESS, productDO.getId()).toString();
     }
 
     private void transform(ProductDO productDO) {

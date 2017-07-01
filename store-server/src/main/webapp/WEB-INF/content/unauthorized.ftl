@@ -1,7 +1,6 @@
 <html>
 <head>
     <title>没有权限访问</title>
-    <link rel="shortcut icon" href="${absoluteContextPath}/img/ott.ico" type="image/x-icon">
     <link  href="${absoluteContextPath}/css/ott.min.css" rel="stylesheet" type="text/css">
     <link href="${absoluteContextPath}/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="${absoluteContextPath}/css/pages.min.css" rel="stylesheet" type="text/css">

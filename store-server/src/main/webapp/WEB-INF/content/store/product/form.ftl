@@ -77,8 +77,8 @@
                 callback: function (pictures) {
                     for (var i = 0; i < pictures.length; i++) {
                         var $temp = $($("#pictureTemplate").prop("outerHTML"));
-                        $temp.find("input[type='hide']").val(pictures[i].url);
-                        $temp.find("input[type='hide']").attr("name", "pictureList");
+                        $temp.find("input[type='hidden']").val(pictures[i].url);
+                        $temp.find("input[type='hidden']").attr("name", "pictureList");
                         $temp.find("img").attr("src", pictures[i].visitUrl);
                         $temp.attr("id", "pictureDiv");
                         $temp.removeClass("hide");
@@ -94,12 +94,11 @@
         function save() {
             $('#product_form').customAjaxSubmit({
                 success:function(json){
-                    console.log(json);
                     $('#product_form').submitResult(json,{
                         success:function(data) {
                             if (data.returnCode == 1) {
                                 alertMsg(<#if product.id??>"编辑产品"<#else>"添加产品"</#if>, "成功保存", function() {
-                                    location.href="${absoluteContextPath}/product/list";
+                                    location.href="${SystemConfig.storeFrontUrl}/product/" + data.content;
                                 });
                             }else{
                                 $.showMessage({type:"error",message: data.returnMsg});

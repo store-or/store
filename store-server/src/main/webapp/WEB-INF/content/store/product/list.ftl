@@ -56,7 +56,7 @@
                 var data = {};
                 data.id = id;
                 $.customAjax({
-                    url: '${absoluteContextPath}/classify/del',
+                    url: '${absoluteContextPath}/product/del',
                     type: 'post',
                     data: data,
                     success:function(json){
