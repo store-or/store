@@ -41,17 +41,19 @@
             </div>
             <div class="clearfix"></div>
             <#if product.detailDO?? && product.detailDO.propertyArr?? && product.detailDO.propertyArr?size gt 0>
+                <#assign tmpRow = (product.detailDO.propertyArr?size + 2)/3/>
                 <table class="Product-parameter">
                     <tbody>
                         <tr>
                             <td colspan="3"> <strong>产品参数</strong> </td>
                         </tr>
-                        <#list 1..(product.detailDO.propertyArr?size + 2)/3 as i>
+                        <#list 1..tmpRow as i>
                             <tr>
                                 <#list 0..2 as j>
                                     <td>
-                                        <#if ((i-1)*3 + j) lt product.detailDO.propertyArr?size>
-                                            ${product.detailDO.propertyArr[(i-1)*3 + j]!""}
+                                        <#assign tmpIndex = j * tmpRow + i />
+                                        <#if tmpIndex lte product.detailDO.propertyArr?size>
+                                            ${product.detailDO.propertyArr[tmpIndex-1]!""}
                                         <#else>
                                             &nbsp;
                                         </#if>
