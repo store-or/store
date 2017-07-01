@@ -39,7 +39,7 @@
         </div>
     </div>
 </header>
-<div style="min-height: 639px;;">
+<div style="min-height: 639px;margin-top:60px;">
     <sitemesh:write property="body"/>
 </div>
 <div id="footer_copyright">

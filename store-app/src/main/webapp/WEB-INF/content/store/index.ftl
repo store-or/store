@@ -7,7 +7,7 @@
     <script>
         $().ready(function(){
             <#if recommends?? && recommends?size gt 0>
-                $('.slider-view').bxSlider({
+                $('#recommends').bxSlider({
                     slideWidth: 240,
                     minSlides: 2,
                     maxSlides: 3,
@@ -16,43 +16,38 @@
                     pager:false
                 });
             </#if>
-            $('.bxslider').bxSlider({
+            $('#banners').bxSlider({
                 displaySlideQty:1,//显示li的个数
                 moveSlideQty: 1,//移动li的个数
                 captions: false,//自动控制
                 auto: true,
-
+                pagerType:"short"
             });
         });
     </script>
 </head>
 <body>
-<div id="dz_header_spacer"></div>
 <@display.banner banners!/>
 <section id="our_work" class="dzen_section_DD">
     <header>
         <div class="dzen_container">
-            <h3>Product</h3>
+            <h3>Products</h3>
             <h5>精品推荐</h5>
         </div>
     </header>
-
-        <div class="dzen_section_content">
-            <div class="dzen_container">
-                <div class="dzen_column_DD_span12 " style="width:780px;">
-                    <div class="slider-view">
-                        <#if recommends?? && recommends?size gt 0>
-                            <#list recommends as recommend>
-                                <div class="slide"><a href="${absoluteContextPath}/product/${recommend.product.id}"><img src="<@display.pictureUrl recommend.product.cover!''/>"><p><strong>${recommend.product.name}</strong><span>${recommend.product.introduction!""}</span></p></a></div>
-                            </#list>
-                        </#if>
-                    </div>
-                    <div class="dzen_column_DD_span12 center_aligned" style="margin-top:15px;"> <button class="btn-default btn-big" onclick="location.href='${absoluteContextPath}/product/list'">查看全部</button></div>
-                </div>
-            </div>
-        </div>
-
-
+    <ul class="bxslider" style="height:150px;" id="recommends">
+        <#if recommends?? && recommends?size gt 0>
+            <#list recommends as recommend>
+                <li>
+                    <a href="${absoluteContextPath}/product/${recommend.product.id?c}">
+                        <img src="<@display.pictureUrl recommend.product.cover!''/>"/>
+                        <p><strong>${recommend.product.name}</strong></p>
+                        <p><span>${recommend.product.introduction!""}</span></p>
+                    </a>
+                </li>
+            </#list>
+        </#if>
+    </ul>
 </section>
 <footer id="dz_main_footer">
     <div id="footer_columns">
