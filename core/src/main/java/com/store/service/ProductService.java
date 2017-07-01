@@ -84,12 +84,9 @@ public class ProductService extends TransactionBaseService<ProductDO, Long> {
         String sql = "delete from product_classify where classify_id=?";
         executeSql(sql, classifyId);
         String classify = ProductDO.CLASSIFY_ID_SPLIT + classifyId + ProductDO.CLASSIFY_ID_SPLIT;
-        // 删除精品推荐
-        sql = "delete from recommend r where exists(select id from product where id=r.product_id and classify_ids ~ ?)";
-        executeSql(sql, classify);
         // 删除产品
-        sql = "delete from product where classify_ids ~ ?";
-        executeSql(sql, classify);
+        sql = "update product set classify_ids=replace(classify_ids,?,?) where classify_ids ~ ?";
+        executeSql(sql, classify, ProductDO.CLASSIFY_ID_SPLIT, classify);
     }
 
     @Transactional

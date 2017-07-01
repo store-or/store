@@ -70,13 +70,15 @@
         function uploadPictures(obj) {
             var $picturesDiv = $("#pictures");
             var len = $picturesDiv.children("#pictureDiv").length;
+            console.log(len);
             $(obj).uploadPictures({
                 url: '${absoluteContextPath}/file/upload',
                 data: {total:4 - len},
                 callback: function (pictures) {
                     for (var i = 0; i < pictures.length; i++) {
                         var $temp = $($("#pictureTemplate").prop("outerHTML"));
-                        $temp.find("[name='pictureList']").val(pictures[i].url);
+                        $temp.find("input[type='hide']").val(pictures[i].url);
+                        $temp.find("input[type='hide']").attr("name", "pictureList");
                         $temp.find("img").attr("src", pictures[i].visitUrl);
                         $temp.attr("id", "pictureDiv");
                         $temp.removeClass("hide");
@@ -120,7 +122,7 @@
                             <#if product.id??>
                                 <input type="hidden" class="hide" name="id" value="${product.id?c}"/>
                             </#if>
-                            <div class="form-horizontal"  style="border:1px solid #ddd; height:460px;">
+                            <div class="form-horizontal"  style="border:1px solid #ddd;">
                                 <div class="panel panel-white">
                                     <div class="clearfix form-title">
                                         <h3 class="panel-title">基本信息</h3>
@@ -213,11 +215,11 @@
                                                 <div class="div1" >
                                                     <img />
                                                     <input type="file" title='选择文件' onchange="changePicture(this);" class="inputstyle">
-                                                    <div class="file-close" onclick="$(this).parent().remove();$('#addPicture_div').removeClass('hide');" >
+                                                    <div class="file-close" onclick="$(this).parents('#pictureDiv').remove();$('#addPicture_div').removeClass('hide');" >
                                                         <span aria-hidden="true" class="icon-close text-danger text-md"></span>
                                                     </div>
                                                 </div>
-                                                <input type="hidden" class="hide" name="pictureList">
+                                                <input type="hidden" class="hide">
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
@@ -237,8 +239,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="clearfix" style="height: 5px;"></div>
-                            <div class="form-horizontal"  style="border:1px solid #ddd; height:460px;">
+                            <div class="form-horizontal"  style="border:1px solid #ddd; margin-top:5px;">
                                 <div class="panel panel-white">
                                     <div class="clearfix form-title">
                                         <h3 class="panel-title">产品详情</h3>
