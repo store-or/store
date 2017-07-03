@@ -38,7 +38,6 @@
     </script>
 </head>
 <body>
-<div id="dz_header_spacer"></div>
 <@display.banner banners!/>
 <div class="main">
     <section class="dzen_section_DD product">
@@ -65,7 +64,7 @@
                                 <div class="dzen_column_DD_span12">
                                     <div class=" news-cuolumn ">
                                         <h4>${product.name!""}</h4>
-                                        <p class="dzen_follow_us dzen-text">${product.introduction!""}</p>
+                                        <p class="dzen_follow_us dzen-text"><#if product.introduction?? && product.introduction!="">${product.introduction}<#else>&nbsp;</#if></p>
                                     </div>
                                 </div>
                             </div>

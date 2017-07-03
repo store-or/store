@@ -12,11 +12,9 @@
             rootPath:"${absoluteContextPath}/js/ueditor/"
         });
     </script>
-
     <title>Contact-联系我们</title>
 </head>
 <body>
-<div id="dz_header_spacer"></div>
 <section id="our_work" class="dzen_section_DD">
     <div class="dzen_section_content">
         <div class="dzen_container">
@@ -24,7 +22,7 @@
                 <h3>联系我们</h3>
             </div>
             <div id="showContent">
-            ${portalParam.value!""}
+                ${portalParam.value!""}
             </div>
         </div>
     </div>

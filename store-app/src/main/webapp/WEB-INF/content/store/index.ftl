@@ -11,7 +11,7 @@
                     slideWidth: 240,
                     minSlides: 2,
                     maxSlides: 3,
-                    moveSlides: 1,
+                    moveSlides: 3,
                     slideMargin: 30,
                     pager:false
                 });
@@ -20,8 +20,7 @@
                 displaySlideQty:1,//显示li的个数
                 moveSlideQty: 1,//移动li的个数
                 captions: false,//自动控制
-                auto: true,
-                pagerType:"short"
+                auto: true
             });
         });
     </script>
@@ -41,8 +40,8 @@
                 <li>
                     <a href="${absoluteContextPath}/product/${recommend.product.id?c}">
                         <img src="<@display.pictureUrl recommend.product.cover!''/>"/>
-                        <p><strong>${recommend.product.name}</strong></p>
-                        <p><span>${recommend.product.introduction!""}</span></p>
+                        <p class="productName"><strong>${recommend.product.name}</strong></p>
+                        <p class="introduction"><span>${recommend.product.introduction!""}</span></p>
                     </a>
                 </li>
             </#list>
@@ -54,7 +53,7 @@
         <div class="row">
             <div class="span4 clearfix contact-left">
                 <div class="widget">
-                    <h3>CONTACT</h3>
+                    <h3>Contact</h3>
                     <h6>联系我们</h6>
                     <div class="contact_info_widget">
                         <p>
@@ -73,7 +72,7 @@
             <div class="span8 clearfix">
                 <div class="widget rpwe_widget">
                     <div class="span4 floatL">
-                        <h3>ABOUT US</h3>
+                        <h3>About Us</h3>
                         <h6>关于我们</h6>
                         <img src="<@display.pictureUrl CompanyConfig.aboutUs!''/>" alt=""/>
                     </div>

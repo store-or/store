@@ -4,9 +4,9 @@
     <title>About Us-关于我们</title>
     <script type="text/javascript">
         $().ready(function() {
-        <#if menuList?? && menuList?size gt 0>
-            $("#menuDiv ul li:first").click();
-        </#if>
+            <#if menuList?? && menuList?size gt 0>
+                $("#menuDiv ul li:first").click();
+            </#if>
         });
 
         function ajaxContent(obj, menuId) {
@@ -35,7 +35,6 @@
 
 </head>
 <body>
-<div id="dz_header_spacer"></div>
 <section class="dzen_section_DD aboutUs">
     <div class="dzen_section_content">
         <div class="dzen_container">

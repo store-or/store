@@ -109,7 +109,7 @@ input[type="text"],input[type="password"],input[type="email"], textarea, select 
 .dzen_section_DD {
 	position: relative;
 	overflow: hidden;
-	padding-top: 0px;
+	padding-top: 10px;
 	padding-bottom: 40px;
 }
 
@@ -2807,8 +2807,9 @@ aside.sidebar .flickr_stream img {
 .contact_info_widget p {
 	position: relative;
 	margin-bottom: 15px;
-	color: #333;
+	color: #535353;
 	padding-right: 5px;
+    font-size: 16px;
 }
 
 .contact_info_widget p a {
@@ -3227,7 +3228,7 @@ aside.sidebar .flickr_stream img {
 }
 
 #dz_main_footer h3 {
-	color: #333;
+	color: #313131;
 	font-size: 30px;
 	line-height: 20px;
 	margin-bottom: 15px;
@@ -3235,6 +3236,8 @@ aside.sidebar .flickr_stream img {
 
 #dz_main_footer h6 {
 	margin-bottom: 15px;
+    color: #535353;
+    font-size: 18px;
 }
 
 #dz_main_footer a {
@@ -3244,7 +3247,7 @@ aside.sidebar .flickr_stream img {
 #footer_columns {
 	width: 860px;
 	margin: 0 auto;
-	padding: 68px 0;
+	padding: 40px 0;
 	background-size: cover;
 }
 
@@ -4930,6 +4933,10 @@ aside.sidebar .flickr_stream img {
 }
 .Product-parameter td{
 	color:#333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
 }
 .pic-view{
 	text-align: center;
@@ -5010,4 +5017,14 @@ a.wx-code {
 }
 .state-FACIAL{
     background:#d23200;
+}
+#recommends .productName{
+    font-size: 16px;
+    color: #131313;
+    text-align: center;
+}
+#recommends .introduction{
+    font-size: 14px;
+    color: #999999;
+    margin: 0px 10px;
 }

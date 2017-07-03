@@ -10,12 +10,12 @@
             <#list banners as tmp>
                 <li>
                     <a href="<#if tmp.link?? && tmp.link!="">${tmp.link}<#else>javascript:void(0)</#if>">
-                        <img src="<@pictureUrl tmp.poster!''/>"/>
+                        <img src="<@pictureUrl tmp.poster!''/>" style="max-height: 300px;width:100%;"/>
                     </a>
                 </li>
             </#list>
         <#else>
-            <li><img /></li>
+            <li><img style="max-height: 300px;width:100%;"/></li>
         </#if>
     </ul>
 </#macro>
