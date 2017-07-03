@@ -39,7 +39,7 @@
         </div>
     </div>
 </header>
-<div style="min-height: 639px;margin-top:60px;">
+<div style="min-height: 500px;margin-top:60px;" id="content-body">
     <sitemesh:write property="body"/>
 </div>
 <div id="footer_copyright">
@@ -53,6 +53,10 @@
 </div>
 <script>
     $().ready(function(){
+        var headerHeight = $("#dz_main_header").get(0).offsetHeight;
+        var footerHeight = $("#footer_copyright").get(0).offsetHeight;
+        var minHeight = $(window).height() - headerHeight - footerHeight + 'px';
+        $("#content-body").css("min-height",minHeight);
         var url = location.href;
         var path = url.substring(${absoluteContextPath?length});
         var forPath = '';

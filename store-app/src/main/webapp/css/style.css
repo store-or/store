@@ -1348,11 +1348,11 @@ nav > ul {
 }
 
 nav > ul > li {
-	float: left;
 	line-height: 16px;
 	margin: 0 5px;
 	padding: 12px;
 	padding-top: 13px;
+    display: inline-block;
 }
 
 nav > ul > li a {
