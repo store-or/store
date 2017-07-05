@@ -11,7 +11,7 @@
             <ul class="nav navbar-nav navbar-left" id="main-menu">
             <@sec.authorize anyAction="product-list;classify-list;">
                 <!-- url=/cms/x1/x2 for= x1-x2 多个的时候,x1-x2,x11-x22, -->
-                <li class="dropdown" for=",video-list,entry-list,classify-list,provider-list,star-list," hasChild>
+                <li class="dropdown" for=",product-list,classify-list,product-toModify," hasChild>
                     <a href="javascript:void(0)" data-toggle="dropdown" class="dropdown-toggle waves-effect waves-button "  >
                         产品管理<i class="fa fa-angle-down m-l-xxs"></i>
                     </a>
@@ -47,7 +47,7 @@
                 </li>
             </@sec.authorize>
             <@sec.authorize anyAction="user-list;role-operate;resource-operate;param-list;cpchn-list;group-list">
-                <li for=",privilege-user,privilege-role,group-list,param-list,cpchn-list," hasChild>
+                <li class="dropdown" for=",privilege-user,privilege-role,group-list,param-list,cpchn-list," hasChild>
                     <a class="waves-effect waves-button" urls="<@securityUrl "user-list" "/privilege/user/list"/><@securityUrl "role-operate" "/privilege/role/list"/><@securityUrl "group-list" "/group/list"/><@securityUrl "param-list" "/param/list"/><@securityUrl "cpchn-list" "/cpchn/list"/>" href="javascript:void(0)" onclick="selectRootMenu(this)">系统管理</a>
                 </li>
             </@sec.authorize>

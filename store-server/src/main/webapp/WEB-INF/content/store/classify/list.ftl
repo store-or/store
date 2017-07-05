@@ -80,7 +80,7 @@
 
 
         function del(id) {
-            confirmDialog("删除分类", "是否删除?", function() {
+            confirmDialog("删除分类", "是否确认删除该分类?", function() {
                 var data = {};
                 data.id = id;
                 $.customAjax({

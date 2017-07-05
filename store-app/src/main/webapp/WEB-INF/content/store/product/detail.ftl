@@ -43,7 +43,7 @@
             </div>
             <div class="clearfix"></div>
             <#if product.detailDO?? && product.detailDO.propertyArr?? && product.detailDO.propertyArr?size gt 0>
-                <#assign tmpRow = (product.detailDO.propertyArr?size + 2)/3/>
+                <#assign tmpRow = ((product.detailDO.propertyArr?size + 2)/3)?int/>
                 <table class="Product-parameter">
                     <tbody>
                         <tr>

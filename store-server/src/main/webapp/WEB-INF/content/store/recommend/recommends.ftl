@@ -31,7 +31,7 @@
                 callback :function(target) {
                     var $obj = $(target);
                     $.customAjax({
-                        url:'${absoluteContextPath}/recommend/updateIndex',
+                        url:'${absoluteContextPath}/recommend/modifyIndex',
                         type:'post',
                         data:{
                             id: $obj.attr("recommendId"),

@@ -8,7 +8,6 @@
         <div class="row tab_demo">
             <div id="content">
                 <div class="welcome">
-                    <img src="${absoluteContextPath}/img/welcome.jpg">
                 </div>
             </div>
         </div>

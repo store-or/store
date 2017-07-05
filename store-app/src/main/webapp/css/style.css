@@ -2004,6 +2004,11 @@ nav > ul > .current-menu-ancestor {
 	margin-left: 15px;
 }
 
+.post_meta_share a img {
+    width:100%;
+    height:100%;
+}
+
 .post_meta_share a:hover {
 	border: 3px solid  #660033;
 }
@@ -5028,3 +5033,4 @@ a.wx-code {
     color: #999999;
     margin: 0px 10px;
 }
+#recommends img{width:240px;height:150px;}

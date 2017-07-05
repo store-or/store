@@ -5186,3 +5186,9 @@ a.waves-effect .waves-ripple {
     cursor: pointer;
     color: white;
 }
+.navbar .dropdown {
+    display: inline-block;
+}
+.navbar-nav>li {
+    float:none
+}
