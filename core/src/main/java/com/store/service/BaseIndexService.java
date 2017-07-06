@@ -18,9 +18,13 @@ public abstract class BaseIndexService<T extends BaseIndexDO> extends Transactio
 
     @Transactional
     public void add(T t) {
-        Integer max = (Integer) baseDao.createCriteria().setProjection(Projections.max("index")).uniqueResult();
+        Integer max = getMaxIndex();
         t.setIndex(max == null ? 1 : (max.intValue() + 1));
         super.saveOrUpdate(t);
+    }
+
+    protected Integer getMaxIndex() {
+        return (Integer) baseDao.createCriteria().setProjection(Projections.max("index")).uniqueResult();
     }
 
     protected void modifyIndex(List<T> list, T t, int index) {

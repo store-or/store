@@ -13,13 +13,14 @@
             data: {
                 condition: $("#condition").val()
             },
-            success: function(productId) {
+            success: function(productIds) {
                 $.customAjax({
-                    url: '${absoluteContextPath}/recommend/save',
+                    url: '${absoluteContextPath}/recommend/batchSave',
                     type: 'post',
                     data: {
-                        "product.id": productId
+                        "productIds": productIds
                     },
+                    traditional: true,
                     success:function(json){
                         var data = JSON.parse(json);
                         refresh();

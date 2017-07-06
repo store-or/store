@@ -159,7 +159,7 @@ $.fn.chooseProduct= function(options){
         messageParentId:'message_l',
         url:'',
         data: {},
-        success:function(id){}
+        success:function(ids){}
     };
     options = $.extend(true, {}, defaults,options);
     var productDialog = $(this);
@@ -181,7 +181,11 @@ $.fn.chooseProduct= function(options){
                         return;
                     }
                     productDialog.modal("hide");
-                    options.success($(products[0]).val());
+                    var productIds=[];
+                    for (var i = 0; i < products.length; i++) {
+                        productIds.push($(products[i]).val());
+                    }
+                    options.success(productIds);
                 });
             } else {
                 $.showMessage({type:"error",message: data.returnMsg, parentId: options.messageParentId});

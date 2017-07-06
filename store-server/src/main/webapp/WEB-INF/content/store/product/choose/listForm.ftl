@@ -13,6 +13,9 @@
             lightId:'chooseProduct',
             params:[
                 {name : "condition", value : '${(condition!"")}'}
+                <#if type??>
+                    ,{name : "type", value : '${type}'}
+                </#if>
             ],
             pageId : '${page.pageId}',
             pageNo: pageNo ? pageNo : ${page.pageNo?c},

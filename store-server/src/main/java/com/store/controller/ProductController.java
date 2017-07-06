@@ -176,20 +176,20 @@ public class ProductController extends BaseController {
 
     @ResponseBody
     @RequestMapping("/toChoose")
-    public String toChoose(String condition, Model model) throws FreemarkerParseException {
-        listChooseModel(new Page<ProductDO>(1, "chooseProductPage"), condition, null, model);
+    public String toChoose(String condition, Integer type, Model model) throws FreemarkerParseException {
+        listChooseModel(new Page<ProductDO>(1, "chooseProductPage"), condition, null, type, model);
         model.addAttribute("classifies", classifyService.listByIndexAsc());
         return jsonResponseView("/store/product/choose/listForm", model);
     }
 
     @ResponseBody
     @RequestMapping("/ajaxChooseProducts")
-    public String ajaxChooseProducts(Page<ProductDO> page, String condition, String search, Model model) throws FreemarkerParseException {
-        listChooseModel(page, condition, search, model);
+    public String ajaxChooseProducts(Page<ProductDO> page, String condition, String search, Integer type, Model model) throws FreemarkerParseException {
+        listChooseModel(page, condition, search, type, model);
         return jsonResponseView("/store/product/choose/products", model);
     }
 
-    private void listChooseModel(Page<ProductDO> page, String condition, String search, Model model) {
+    private void listChooseModel(Page<ProductDO> page, String condition, String search, Integer type, Model model) {
         if (StringUtils.isBlank(page.getOrderBy())) {
             // 默认按置顶时间的降序
             page.setOrderBy("topTime,createTime");

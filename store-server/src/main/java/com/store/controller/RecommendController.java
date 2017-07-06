@@ -8,9 +8,11 @@ import com.core.web.freemarker.FreemarkerParseException;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import com.store.domain.RecommendDO;
+import com.store.domain.product.ProductDO;
 import com.store.domain.product.Status;
 import com.store.service.RecommendService;
 import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.lang.ArrayUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,6 +23,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.validation.Valid;
+import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
@@ -77,6 +80,31 @@ public class RecommendController extends BaseController {
         if (!result.hasFieldErrors("product") && !recommendService.isPropertyUnique("product.id", current.getProduct().getId(), db == null ? null : db.getProduct().getId())) {
             result.addError(new FieldError("recommend", "product", "产品不可重复添加推荐"));
         }
+    }
+
+    @RequestMapping("/batchSave")
+    @ResponseBody
+    public String batchSave(Long[] productIds) {
+        if (ArrayUtils.isEmpty(productIds)) {
+            return new JsonResponse(JsonResponse.CODE_FAILURE, "请选择产品").toString();
+        }
+        Collection<Long> pIds = Sets.newLinkedHashSet();
+        pIds.addAll(Lists.newArrayList(productIds));
+        pIds = recommendService.truncateExists(pIds);
+        if (CollectionUtils.isEmpty(pIds)) {
+            return JsonResponse.JSON_SUCCESS;
+        }
+        List<RecommendDO> recommends = Lists.newArrayList();
+        for (Long pId : pIds) {
+            RecommendDO recommendDO = new RecommendDO();
+            ProductDO productDO = new ProductDO();
+            productDO.setId(pId);
+            recommendDO.setProduct(productDO);
+            setDefault(recommendDO);
+            recommends.add(recommendDO);
+        }
+        recommendService.batchSave(recommends);
+        return JsonResponse.JSON_SUCCESS;
     }
 
     @RequestMapping("/modifyIndex")

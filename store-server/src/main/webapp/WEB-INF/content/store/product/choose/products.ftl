@@ -16,7 +16,11 @@
         <#list page.result as product>
         <tr>
             <td>
-                <input type="radio" name="chooseProductId" value="${product.id?c}"/>
+                <#if type?? && type==1>
+                    <input type="radio" name="chooseProductId" value="${product.id?c}"/>
+                <#else>
+                    <input type="checkbox" name="chooseProductId" value="${product.id?c}"/>
+                </#if>
             </td>
             <td class="text-hidden" title="${(product.name!"")?xhtml}">${(product.name!"")?xhtml}</td>
             <td class="text-hidden" title="<@productClassify.productClassify product/>"><@productClassify.productClassify product/></td>
