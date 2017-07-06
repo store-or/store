@@ -4942,6 +4942,7 @@ aside.sidebar .flickr_stream img {
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 200px;
+    padding-right: 5px;
 }
 .pic-view{
 	text-align: center;
