@@ -30,7 +30,7 @@
 <section id="our_work" class="dzen_section_DD">
     <header>
         <div class="dzen_container">
-            <h3>Products</h3>
+            <h3>Producrs</h3>
             <h5>精品推荐</h5>
         </div>
     </header>
@@ -41,12 +41,15 @@
                     <a href="${absoluteContextPath}/product/${recommend.product.id?c}">
                         <img src="<@display.pictureUrl recommend.product.cover!''/>"/>
                         <p class="productName"><strong>${recommend.product.name}</strong></p>
-                        <p class="introduction"><span>${recommend.product.introduction!""}</span></p>
+                        <#if recommend.product.introduction?? && recommend.product.introduction!="">
+                            <p class="introduction"><span>${recommend.product.introduction!""}</span></p>
+                        </#if>
                     </a>
                 </li>
             </#list>
         </#if>
     </ul>
+    <div class="dzen_column_DD_span12 center_aligned"> <button class="btn-default btn-big">查看全部</button></div>
 </section>
 <footer id="dz_main_footer">
     <div id="footer_columns">
@@ -56,28 +59,30 @@
                     <h3>Contact</h3>
                     <h6>联系我们</h6>
                     <div class="contact_info_widget">
-                        <p>
-                            <a href="${CompanyConfig.weibo!""}"><img src="${absoluteContextPath}/img/sina-big.png" alt=""/></a>
-                            <a href="javascript:void(0)" class="wx-code">
-                                <img src="${absoluteContextPath}/img/weix-big.png" alt=""/>
-                                <img src="<@display.pictureUrl CompanyConfig.wechat!''/>" class="qrcode"/>
-                            </a>
-                            <a href="${CompanyConfig.tmall!""}"><img src="${absoluteContextPath}/img/tmall-big.png" alt=""/></a>
-                        </p>
                         <p>订购热线：${CompanyConfig.phone!""}</p>
                         <p>地址：${CompanyConfig.address!""}</p>
+                        <p>
+                            <a href="${CompanyConfig.weibo!""}"><img src="${absoluteContextPath}/img/sina.png" alt=""/></a>
+                            <a href="javascript:void(0)" class="wx-code">
+                                <img src="${absoluteContextPath}/img/weix.png" alt=""/>
+                                <img src="<@display.pictureUrl CompanyConfig.wechat!''/>" class="qrcode"/>
+                            </a>
+                            <a href="${CompanyConfig.tmall!""}"><img src="${absoluteContextPath}/img/tmall.png" alt=""/></a>
+                        </p>
                     </div>
                 </div>
             </div>
             <div class="span8 clearfix">
                 <div class="widget rpwe_widget">
-                    <div class="span4 floatL">
+                    <div class="floatL" style="width: 45%;">
                         <h3>About Us</h3>
                         <h6>关于我们</h6>
                         <img src="<@display.pictureUrl CompanyConfig.aboutUs!''/>" alt=""/>
                     </div>
-                    <div class="rpwe-block span8 floatL">
-                        <img src="<@display.pictureUrl CompanyConfig.contactUs!''/>" alt=""/>
+                    <div class="rpwe-block floatL" style="width: 55%;">
+                        <p>
+                            ${CompanyConfig.introduction!""}
+                        </p>
                     </div>
                 </div>
             </div>
