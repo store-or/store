@@ -4053,6 +4053,9 @@ aside.sidebar .flickr_stream img {
 	line-height: 14px;
 	color: #000;
 }
+.side_bar a.hide{
+    display: none;
+}
 
 .side_bar a:hover {
 	background: #660033;
@@ -4086,10 +4089,6 @@ aside.sidebar .flickr_stream img {
     max-width: 200px;
     padding-right: 5px;
 }
-.pic-view{
-	text-align: center;
-}
-.pic-view img{ width: 100%;}
 
 .icon-all{
 	display: block;
