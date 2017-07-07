@@ -49,7 +49,7 @@
             </#list>
         </#if>
     </ul>
-    <div class="dzen_column_DD_span12 center_aligned"> <button class="btn-default btn-big">查看全部</button></div>
+    <div class="dzen_column_DD_span12 center_aligned"> <button class="btn-default btn-big" onclick="location.href='${absoluteContextPath}/product/index'">查看全部</button></div>
 </section>
 <footer id="dz_main_footer">
     <div id="footer_columns">
