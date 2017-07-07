@@ -80,9 +80,8 @@
                         <img src="<@display.pictureUrl CompanyConfig.aboutUs!''/>" alt=""/>
                     </div>
                     <div class="rpwe-block floatL" style="width: 55%;">
-                        <p>
-                            ${CompanyConfig.introduction!""}
-                        </p>
+                        <div id="about-info">${CompanyConfig.introduction!""}</div>
+                        <a href="${absoluteContextPath}/contact/index" class="more-link">了解更多</a>
                     </div>
                 </div>
             </div>

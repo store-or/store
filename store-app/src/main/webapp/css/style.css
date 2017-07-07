@@ -4184,3 +4184,40 @@ a.wx-code {
 #our_work .bx-prev {margin-left: -100px;}
 #our_work .bx-next {margin-right: -100px;}
 .rpwe_widget img{width: 240px; height: 150px; max-width: 240px;}
+.rpwe-block{
+    position: relative;
+}
+#about-info{
+    line-height:25px;
+    height:230px;
+    overflow: hidden;
+    text-indent:2em;
+}
+.more-link{
+    position: absolute; bottom:-15px; right:15px;
+    color: #333 !important;
+    text-decoration: underline;
+}
+.contact_info_widget p {
+    position: relative;
+    margin-bottom: 15px;
+    color: #333;
+    padding-right: 5px;
+}
+.contact_info_widget p a {
+    margin-right: 10px;
+}
+.bx-wrapper .bx-next:focus, .bx-wrapper .bx-next:hover {
+     background-position: -43px 0;
+}
+#bannerParent .bx-wrapper .bx-controls-direction a {
+    width: 64px;
+    height: 64px;
+    margin-top: -32px;
+}
+#bannerParent .bx-wrapper .bx-prev {
+    background: url(../img/u49.png);
+}
+#bannerParent .bx-wrapper .bx-next {
+    background: url(../img/u51.png);
+}
