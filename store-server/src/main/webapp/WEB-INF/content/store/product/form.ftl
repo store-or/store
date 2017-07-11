@@ -40,6 +40,7 @@
         });
         function checkTag(obj) {
             if ($(obj).isTabSelected()) {
+                $(obj).unSelectTab();
                 return;
             }
             $(obj).selectTab();
