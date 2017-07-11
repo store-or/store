@@ -1985,7 +1985,7 @@ nav > ul > .current-menu-ancestor {
 	color: #939fa6;
 	width: 113px;
 	height: 70px;
-	margin-left: 15px;
+	margin-left: 2px;
 }
 
 .post_meta_share a img {
@@ -2970,11 +2970,6 @@ aside.sidebar .flickr_stream img {
 	padding: 3px 35px;
 	font-family: Roboto;
 	font-weight: 300;
-}
-
-.portfolio_item_view_link a:hover {
-	color: #fff;
-	background: #505558;
 }
 
 .portfolio_share_social a:first-child {
