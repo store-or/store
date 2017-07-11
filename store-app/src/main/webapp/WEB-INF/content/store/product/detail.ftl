@@ -44,10 +44,10 @@
             <div class="clearfix"></div>
             <#if product.detailDO?? && product.detailDO.propertyArr?? && product.detailDO.propertyArr?size gt 0>
                 <#assign tmpRow = ((product.detailDO.propertyArr?size + 2)/3)?int/>
-                <table class="Product-parameter">
+                <table class="Product-parameter" cellpadding="0" cellspacing="0">
                     <tbody>
                         <tr>
-                            <td colspan="3"> <strong>产品参数</strong> </td>
+                            <td colspan="3" class="head"> <strong>产品参数</strong> </td>
                         </tr>
                         <#list 1..tmpRow as i>
                             <tr>
