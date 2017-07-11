@@ -258,7 +258,6 @@ input[type="text"],input[type="password"],input[type="email"], textarea, select 
 .column_title_left {
 	display: block;
 	text-align: left;
-	font-size: 30px;
 	padding-bottom: 10px;
 }
 
@@ -267,6 +266,10 @@ input[type="text"],input[type="password"],input[type="email"], textarea, select 
 	bottom: -2px;
 	left: 0;
 	margin-left: 0;
+}
+#portfolio_item_meta p{
+    font-size: 14px;
+    color: #999999;
 }
 
 .column_title_left {
