@@ -34,7 +34,7 @@
             <h5>精品推荐</h5>
         </div>
     </header>
-    <ul class="bxslider" style="height:150px;" id="recommends">
+    <ul class="bxslider" style="height:150px;padding-top: 30px;" id="recommends">
         <#if recommends?? && recommends?size gt 0>
             <#list recommends as recommend>
                 <li>
@@ -49,7 +49,7 @@
             </#list>
         </#if>
     </ul>
-    <div class="dzen_column_DD_span12 center_aligned"> <button class="btn-default btn-big" onclick="location.href='${absoluteContextPath}/product/index'">查看全部</button></div>
+    <div class="dzen_column_DD_span12 center_aligned" style="padding-top: 40px;"> <button class="btn-default btn-big" onclick="location.href='${absoluteContextPath}/product/index'">查看全部</button></div>
 </section>
 <footer id="dz_main_footer">
     <div id="footer_columns">
@@ -59,15 +59,15 @@
                     <h3>Contact</h3>
                     <h6>联系我们</h6>
                     <div class="contact_info_widget">
-                        <p>订购热线：${CompanyConfig.phone!""}</p>
+                        <p class="first">订购热线：${CompanyConfig.phone!""}</p>
                         <p>地址：${CompanyConfig.address!""}</p>
                         <p>
-                            <a href="${CompanyConfig.weibo!""}"><img src="${absoluteContextPath}/img/sina.png" alt=""/></a>
+                            <a href="${CompanyConfig.tmall!""}" ><img class="icon" src="${absoluteContextPath}/img/tmall.png" alt=""/></a>
                             <a href="javascript:void(0)" class="wx-code">
-                                <img src="${absoluteContextPath}/img/weix.png" alt=""/>
+                                <img class="icon" src="${absoluteContextPath}/img/wechat.png" alt=""/>
                                 <img src="<@display.pictureUrl CompanyConfig.wechat!''/>" class="qrcode"/>
                             </a>
-                            <a href="${CompanyConfig.tmall!""}"><img src="${absoluteContextPath}/img/tmall.png" alt=""/></a>
+                            <a href="${CompanyConfig.weibo!""}"><img class="icon" src="${absoluteContextPath}/img/weibo.png" alt=""/></a>
                         </p>
                     </div>
                 </div>
@@ -81,7 +81,7 @@
                     </div>
                     <div class="rpwe-block floatL" style="width: 55%;">
                         <div id="about-info">${CompanyConfig.introduction!""}</div>
-                        <a href="${absoluteContextPath}/contact/index" class="more-link">了解更多</a>
+                        <a href="${absoluteContextPath}/about/index" class="more-link">了解更多</a>
                     </div>
                 </div>
             </div>

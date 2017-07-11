@@ -74,6 +74,7 @@ input[type="text"],input[type="password"],input[type="email"], textarea, select 
 
 .btn-big {
 	padding: 10px 40px;
+    font-size: 16px;
 }
 /*-----------------------------------------------------------------*/
 /* 2. Shortcodes
@@ -229,7 +230,8 @@ input[type="text"],input[type="password"],input[type="email"], textarea, select 
 	text-align: center;
 	color:#131313;
 }
-.bx-wrapper{margin-bottom: 50px!important;border:none!important;-webkit-box-shadow:none;box-shadow: none!important;}
+.bx-wrapper{margin-bottom: 20px!important;border:none!important;-webkit-box-shadow:none;box-shadow: none!important;}
+#productList .bx-wrapper{margin-bottom: 0px!important;}
 .bx-wrapper .bx-controls-auto, .bx-wrapper .bx-pager{bottom:0px!important;}
 .dzen_section_DD header h3,
 .column_title_left {
@@ -249,25 +251,7 @@ input[type="text"],input[type="password"],input[type="email"], textarea, select 
 	display: inline-block;
 	color: #505558;
 	font-size: 24px;
-	line-height: 36px;
-	margin-bottom: 40px;
 	position: relative;
-}
-
-.dzen_section_DD header h4:after,
-.column_title_left:after {
-	display: block;
-	content: "";
-	width: 249px;
-	height: 2px;
-	position: absolute;
-	bottom: -10px;
-	left: 50%;
-	margin-left: -125px;
-}
-
-.dzen_section_DD header h4:after {
-	background: url("../img/line.png");
 }
 
 .dzen_section_DD.section_title_left header h3,
@@ -2536,7 +2520,7 @@ aside .widget {
 #reply-title {
 	font-family: Roboto;
 	font-weight: 300;
-	color: #660033;
+	color: #000000;
 	line-height: 26px;
 	position: relative;
 	margin-bottom: 10px;
@@ -2554,7 +2538,7 @@ aside .widget {
 	content: "";
 	width: 100px;
 	height: 2px;
-	background: #660033;
+	background: #ff4530;
 	position: absolute;
 	bottom: -2px;
 	left: 0;
@@ -2562,11 +2546,7 @@ aside .widget {
 }
 
 aside .widget a {
-	color: #939fa6;
-}
-
-aside .widget a:hover {
-	color: #056ab2;
+	color: #313131;
 }
 
 .widget ul {
@@ -2582,12 +2562,9 @@ aside .widget a:hover {
 }
 
 .widget ul li:hover {
-	background: #660033;
+	background: #ff4530;
 }
 
-.widget ul li:hover a {
-	color: #fff;
-}
 /*-------- 10.1. Search --------*/
 .widget_search form {
 	position: relative;
@@ -2809,20 +2786,6 @@ aside.sidebar .flickr_stream img {
 	border-right: 1px solid #aeaeae;
 }
 
-.contact_info_widget p {
-	position: relative;
-	margin-bottom: 15px;
-	color: #535353;
-	padding-right: 5px;
-    font-size: 16px;
-}
-
-.contact_info_widget p a img{
-	width: 30px;
-    height: 30px;
-    max-width: 30px;
-}
-
 .contact_info_widget i {
 	position: absolute;
 	left: 0;
@@ -2837,8 +2800,6 @@ aside.sidebar .flickr_stream img {
 	-moz-border-radius: 50%;
 	border-radius: 50%;
 }
-
-
 /*-------- 10.7. Contact Page - Contact Info --------*/
 .contact_page_info {
 	position: relative;
@@ -3004,7 +2965,7 @@ aside.sidebar .flickr_stream img {
 
 .portfolio_item_view_link a {
 	display: inline-block;
-	background: #660033;
+	background: #ff4520;
 	color: #fff;
 	padding: 3px 35px;
 	font-family: Roboto;
@@ -3242,7 +3203,6 @@ aside.sidebar .flickr_stream img {
 }
 
 #dz_main_footer h6 {
-	margin-bottom: 15px;
     color: #535353;
     font-size: 18px;
 }
@@ -4058,12 +4018,12 @@ aside.sidebar .flickr_stream img {
 }
 
 .side_bar a:hover {
-	background: #660033;
+	background: #ff4530;
 	color: #fff;
 }
 
 .side_bar_active {
-	background: #660033;
+	background: #ff4530;
 	color: #fff !important;
 }
 /** RESET AND LAYOUT
@@ -4112,11 +4072,8 @@ aside.sidebar .flickr_stream img {
 
 }
 .widget-active{
-	background: #660033;
+	background: #ff4530;
 
-}
-.widget-active a{
-	color:#fff !important;
 }
 .wx-code .qrcode {
     position: absolute;
@@ -4169,55 +4126,59 @@ a.wx-code {
     font-size: 16px;
     color: #131313;
     text-align: center;
+    padding-top: 30px;
+    margin-bottom: 0px;
 }
 #recommends .introduction{
     font-size: 14px;
     color: #999999;
-    margin: 10px 15px;
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
+    margin: 0px 15px;
 }
 #recommends img{width:240px;height:150px;}
-#content-body .bx-wrapper .bx-pager {padding-top: 0px; padding-bottom: 20px;}
-#content-body .bx-wrapper .bx-pager.bx-default-pager a{background-color:white!important;width:20px;height:20px;padding-top:0px;border-radius: 10px;}
+#content-body .bx-wrapper .bx-pager {padding-top: 0px; padding-bottom: 10px;}
+#content-body .bx-wrapper .bx-pager.bx-default-pager a{background-color:white!important;width:12px;height:12px;padding-top:0px;border-radius: 6px;}
 #content-body .bx-wrapper .bx-pager.bx-default-pager a.active, #content-body .bx-wrapper .bx-pager.bx-default-pager a:focus, #content-body .bx-wrapper .bx-pager.bx-default-pager a:hover{background-color:#d23200!important;}
 #our_work .bx-prev {margin-left: -100px;}
 #our_work .bx-next {margin-right: -100px;}
-.rpwe_widget img{width: 240px; height: 150px; max-width: 240px;}
+.rpwe_widget img{width: 240px; height: 150px; max-width: 240px; margin-top: 28px;}
 .rpwe-block{
     position: relative;
 }
 #about-info{
     line-height:25px;
-    height:230px;
+    height:210px;
     overflow: hidden;
     text-indent:2em;
+    color: #535353;
 }
 .more-link{
-    position: absolute; bottom:-15px; right:15px;
+    position: absolute; bottom:-35px; right:15px;
     color: #333 !important;
     text-decoration: underline;
 }
 .contact_info_widget p {
     position: relative;
-    margin-bottom: 15px;
-    color: #333;
-    padding-right: 5px;
+    margin-bottom: 20px;
+    color: #535353;
+    font-size: 16px;
 }
-.contact_info_widget p a {
-    margin-right: 10px;
+.contact_info_widget .first {
+    padding-top: 30px;
 }
 .bx-wrapper .bx-next:focus, .bx-wrapper .bx-next:hover {
      background-position: -43px 0;
 }
-#bannerParent .bx-wrapper .bx-controls-direction a {
-    width: 64px;
-    height: 64px;
-    margin-top: -32px;
+#bannerParent .bx-wrapper .bx-controls-direction a, #our_work .bx-wrapper .bx-controls-direction a{
+    width: 12px;
+    height: 20px;
+    margin-top: -10px;
 }
-#bannerParent .bx-wrapper .bx-prev {
-    background: url(../img/u49.png);
+#bannerParent .bx-wrapper .bx-prev, #our_work .bx-wrapper .bx-prev{
+    background: url(../img/prev.png);
 }
-#bannerParent .bx-wrapper .bx-next {
-    background: url(../img/u51.png);
+#bannerParent .bx-wrapper .bx-next, #our_work .bx-wrapper .bx-next {
+    background: url(../img/next.png);
+}
+.products-even{
+    background-color: #f5f5f5;
 }

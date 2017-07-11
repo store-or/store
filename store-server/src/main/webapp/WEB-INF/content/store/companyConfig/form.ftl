@@ -156,21 +156,6 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="name" class="col-sm-2 control-label">联系我们图片:</label>
-                                    <div class="col-sm-10">
-                                        <input type="hidden" class="hide" name="contactUs.id" value="${config.contactUs.id?c}" >
-                                        <div class="div1" id="contactUs-div">
-                                        <#if config.contactUs.value?? && config.contactUs.value != ''>
-                                            <img src="<#if (config.aboutUs.value)?index_of('http')==-1>${uploadFileContext}/</#if>${config.contactUs.value}"/>
-                                        <#else >
-                                            <img src="${absoluteContextPath}/img/add-file.jpg"/>
-                                        </#if>
-                                            <input type="file" title='选择文件' onchange="uploadContactUs(this);" class="inputstyle">
-                                        </div>
-                                        <input type="hidden" class="hide" name="contactUs.value" value="${(config.contactUs.value!'')?xhtml}">
-                                    </div>
-                                </div>
-                                <div class="form-group">
                                     <label for="name" class="col-sm-2 control-label">联系我们:</label>
                                     <div class="col-sm-10">
                                         <input type="hidden" class="hide" name="contactUsContent.id" value="${config.contactUsContent.id?c}" >

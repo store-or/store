@@ -1,5 +1,6 @@
 package com.store.controller;
 
+import com.core.json.JsonResponse;
 import com.core.web.freemarker.FreemarkerParseException;
 import com.store.domain.MenuDO;
 import com.store.service.MenuService;
@@ -37,8 +38,7 @@ public class AboutUsController extends BaseController {
     @ResponseBody
     public String ajaxContent(Long menuId, Model model) throws FreemarkerParseException {
         MenuDO dbMenu = menuService.get(menuId);
-        model.addAttribute("menu", dbMenu);
-        return jsonResponseView("/store/about/show", model);
+        return new JsonResponse<String>(JsonResponse.CODE_SUCCESS, JsonResponse.MSG_SUCCESS, dbMenu.getPublishContent()).toString();
     }
 
 }

@@ -2,6 +2,12 @@
 <html>
 <head>
     <title>About Us-关于我们</title>
+    <!-- 配置文件 -->
+    <script type="text/javascript" src="${absoluteContextPath}/js/ueditor/ueditor.config.js"></script>
+    <!-- 编辑器源码文件 -->
+    <script type="text/javascript" src="${absoluteContextPath}/js/ueditor/ueditor.all.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="${absoluteContextPath}/js/ueditor/lang/zh-cn/zh-cn.js"></script>
+    <script type="text/javascript" charset="utf-8" src="${absoluteContextPath}/js/ueditor/ueditor.parse.min.js"></script>
     <script type="text/javascript">
         $().ready(function() {
             <#if menuList?? && menuList?size gt 0>
@@ -13,8 +19,6 @@
             if($(obj).hasClass("widget-active")){
                 return;
             }
-            $(obj).siblings().removeClass("widget-active");
-            $(obj).addClass("widget-active");
             $.customAjax({
                 url:'${absoluteContextPath}/about/ajaxContent',
                 type:'post',
@@ -25,6 +29,13 @@
                     var data = JSON.parse(json);
                     if (data.returnCode == 1) {
                         $('#menuContentDiv').html(data.content.data);
+                        $(obj).siblings().removeClass("widget-active");
+                        $(obj).addClass("widget-active");
+                        setTimeout(function(){
+                            uParse("#menuContentDiv",{
+                                rootPath:"${absoluteContextPath}/js/ueditor/"
+                            });
+                        }, 10);
                     } else {
                         $.showMessage({message: data.returnMsg});
                     }
@@ -54,7 +65,7 @@
                     </div>
                 </aside>
             </div>
-            <div class="dzen_column_DD_span10 about_us_introducton" id="menuContentDiv"></div>
+            <div class="dzen_column_DD_span10 about_us_introducton margin_bottom" id="menuContentDiv"></div>
         </div>
     </div>
 </section>

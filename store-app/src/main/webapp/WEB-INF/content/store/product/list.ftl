@@ -6,14 +6,6 @@
     <script src="${absoluteContextPath}/js/jquery/bxslider/jquery.bxslider.js"></script>
     <script>
         $().ready(function(){
-            $("div[id^='classify_']").each(function(index, element){
-                if ($(this).isVisible()) {
-                    var currentClassifyId = $(element).attr("id");
-                    $(".side_bar").removeClass("hide");
-                    $(".side_bar a.side_bar_active").removeClass("side_bar_active");
-                    $(".side_bar a[href='#" + currentClassifyId + "']").addClass("side_bar_active");
-                }
-            });
             $('.bxslider').bxSlider({
                 displaySlideQty:1,//显示li的个数
                 moveSlideQty: 1,//移动li的个数
@@ -26,20 +18,24 @@
                 $("div[id^='classify_']").each(function(index, element){
                     if ($(this).isVisible()) {
                         currentClassifyId = $(element).attr("id");
+                        console.log(currentClassifyId);
                     }
                 });
-                if ($(window).scrollTop() > 0) {
-                    $(".side_bar #top").removeClass("hide");
-                } else {
-                    $(".side_bar #top").addClass("hide");
-                }
-                if (currentClassifyId != undefined) {
+                if (!$("#bannerParent").isVisible()) {
                     $(".side_bar").removeClass("hide");
                     $(".side_bar a.side_bar_active").removeClass("side_bar_active");
-                    $(".side_bar a[href='#" + currentClassifyId + "']").addClass("side_bar_active");
+                    $(".side_bar a[for='" + currentClassifyId + "']").addClass("side_bar_active");
+                } else {
+                    $(".side_bar").addClass("hide");
                 }
             });
         });
+
+        function scrollToDiv(id) {
+            $('body').animate({
+                scrollTop: $("#" + id).offset().top - 80
+            }, 300);
+        }
 
         $.fn.isVisible = function() {
             var currentTop = $(window).scrollTop();
@@ -50,13 +46,15 @@
     </script>
 </head>
 <body>
-<@display.banner banners!/>
+<div id="productList">
+    <@display.banner banners!/>
+</div>
 <div class="main">
-    <section class="dzen_section_DD product">
+    <section class="dzen_section_DD product" style="padding-top: 30px;">
         <div class="dzen_container">
             <#list classifies as classify>
                 <#if classify.products?? && classify.products?size gt 0>
-                    <div id="classify_${classify.id?c}" class="cur">
+                    <div id="classify_${classify.id?c}" class="cur <#if classify_index % 2 != 0>products-even</#if>" style="padding-top: 30px;">
                         <header>
                             <div class="dzen_container">
                                 <h4>${classify.name!""}</h4>
@@ -94,10 +92,10 @@
     <h3>产品分类</h3>
     <#list classifies as classify>
         <#if classify.products?? && classify.products?size gt 0>
-            <a href="#classify_${classify.id?c}">${classify.name!""}</a>
+            <a href="javascript:void(0)" onclick="scrollToDiv('classify_${classify.id?c}')" for="classify_${classify.id?c}">${classify.name!""}</a>
         </#if>
     </#list>
-    <a id="top" class="hide" href="javascript:void(0)" onclick="$('body').animate({scrollTop:0},300)">返回顶部</a>
+    <a id="top" href="javascript:void(0)" onclick="$('body').animate({scrollTop:0},300)">返回顶部</a>
 </div>
 </body>
 </html>
