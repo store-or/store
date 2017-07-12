@@ -28,7 +28,7 @@
                 success:function(json){
                     var data = JSON.parse(json);
                     if (data.returnCode == 1) {
-                        $('#menuContentDiv').html(data.content.data);
+                        $('#menuContentDiv').html(data.content);
                         $(obj).siblings().removeClass("widget-active");
                         $(obj).addClass("widget-active");
                         setTimeout(function(){
