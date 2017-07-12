@@ -60,16 +60,10 @@ input[type="text"],input[type="password"],input[type="email"], textarea, select 
 }
 
 .btn-default {
-	border: 1px solid #ddd;
-	background: none;
-	color: #000;
-	font-size: 14px;
-}
-
-.btn-default:hover {
-	border: 1px solid #333;
+	background: #ff4530;
 	color: #fff;
-	background: #333333;
+	font-size: 14px;
+    border: none;
 }
 
 .btn-big {
@@ -223,6 +217,9 @@ input[type="text"],input[type="password"],input[type="email"], textarea, select 
 
 .dzen_section_DD header {
 	margin-bottom: 30px;
+}
+.recommends .recommendHeader{
+    margin-bottom: 60px;
 }
 
 .dzen_section_DD header,
@@ -913,11 +910,6 @@ input[type="submit"] {
 	border-radius: 3px;
 }
 
-button:hover,
-input[type="submit"]:hover {
-	background: #660033;
-}
-
 .placeholder {
 	color: #929292;
 }
@@ -1307,6 +1299,7 @@ th {
 	float: right;
 	height: 60px;
 	line-height: 60px;
+    padding-right: 100px;
 }
 
 .Contact-info b {
@@ -2548,7 +2541,7 @@ aside .widget {
 	margin-left: 0;
 }
 
-aside .widget a {
+.widget a {
 	color: #313131;
 }
 
@@ -2566,6 +2559,10 @@ aside .widget a {
 
 .widget ul li:hover {
 	background: #ff4530;
+}
+
+.widget ul li:hover a{
+    color: #fff;
 }
 
 /*-------- 10.1. Search --------*/
@@ -4079,8 +4076,8 @@ aside.sidebar .flickr_stream img {
 }
 .widget-active{
 	background: #ff4530;
-
 }
+.widget-active a{color: #fff;}
 .wx-code .qrcode {
     position: absolute;
     z-index: 99;
@@ -4139,6 +4136,7 @@ a.wx-code {
     font-size: 14px;
     color: #999999;
     margin: 0px 15px;
+    text-align: center;
 }
 #recommends img{width:240px;height:150px;}
 #content-body .bx-wrapper .bx-pager {padding-top: 0px; padding-bottom: 10px;}
@@ -4188,3 +4186,4 @@ a.wx-code {
 .products-even{
     background-color: #f5f5f5;
 }
+.margin-right-5{margin-right: 5px;}

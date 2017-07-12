@@ -27,14 +27,14 @@
 </head>
 <body>
 <@display.banner banners!/>
-<section id="our_work" class="dzen_section_DD">
-    <header>
+<section id="our_work" class="dzen_section_DD recommends">
+    <header class="recommendHeader">
         <div class="dzen_container">
-            <h3>Producrs</h3>
+            <h3>Products</h3>
             <h5>精品推荐</h5>
         </div>
     </header>
-    <ul class="bxslider" style="height:150px;padding-top: 30px;" id="recommends">
+    <ul class="bxslider" style="height:150px;" id="recommends">
         <#if recommends?? && recommends?size gt 0>
             <#list recommends as recommend>
                 <li>
@@ -62,12 +62,12 @@
                         <p class="first">订购热线：${CompanyConfig.phone!""}</p>
                         <p>地址：${CompanyConfig.address!""}</p>
                         <p>
-                            <a href="${CompanyConfig.tmall!""}" ><img class="icon" src="${absoluteContextPath}/img/tmall.png" alt=""/></a>
-                            <a href="javascript:void(0)" class="wx-code">
+                            <a href="${CompanyConfig.tmall!""}" class="margin-right-5"><img class="icon" src="${absoluteContextPath}/img/tmall.png" alt=""/></a>
+                            <a href="javascript:void(0)" class="wx-code margin-right-5">
                                 <img class="icon" src="${absoluteContextPath}/img/wechat.png" alt=""/>
                                 <img src="<@display.pictureUrl CompanyConfig.wechat!''/>" class="qrcode"/>
                             </a>
-                            <a href="${CompanyConfig.weibo!""}"><img class="icon" src="${absoluteContextPath}/img/weibo.png" alt=""/></a>
+                            <a href="${CompanyConfig.weibo!""}" class="margin-right-5"><img class="icon" src="${absoluteContextPath}/img/weibo.png" alt=""/></a>
                         </p>
                     </div>
                 </div>
@@ -80,7 +80,7 @@
                         <img src="<@display.pictureUrl CompanyConfig.aboutUs!''/>" alt=""/>
                     </div>
                     <div class="rpwe-block floatL" style="width: 55%;">
-                        <div id="about-info">${CompanyConfig.introduction!""}</div>
+                        <div id="about-info"><#if CompanyConfig.introduction?? && CompanyConfig.introduction?length gt 195>${CompanyConfig.introduction?substring(0, 192)}...<#else>${CompanyConfig.introduction!""}</#if></div>
                         <a href="${absoluteContextPath}/about/index" class="more-link">了解更多</a>
                     </div>
                 </div>

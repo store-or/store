@@ -29,12 +29,12 @@
         <div class="Contact-info">
             <p>
                 <img src="${absoluteContextPath}/img/phone.png" alt=""/><b>${CompanyConfig.phone!""}</b>
-                <a href="${CompanyConfig.tmall!""}"><img src="${absoluteContextPath}/img/tmall.png" alt=""/></a>
-                <a href="javascript:void(0)" class="wx-code">
+                <a href="${CompanyConfig.tmall!""}" class="margin-right-5"><img src="${absoluteContextPath}/img/tmall.png" alt=""/></a>
+                <a href="javascript:void(0)" class="wx-code margin-right-5">
                     <img src="${absoluteContextPath}/img/wechat.png" alt=""/>
                     <img src="<@display.pictureUrl CompanyConfig.wechat!''/>" class="qrcode"/>
                 </a>
-                <a href="${CompanyConfig.weibo!""}"><img src="${absoluteContextPath}/img/weibo.png" alt=""/></a>
+                <a href="${CompanyConfig.weibo!""}" class="margin-right-5"><img src="${absoluteContextPath}/img/weibo.png" alt=""/></a>
             </p>
         </div>
     </div>

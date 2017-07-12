@@ -50,11 +50,12 @@
     <@display.banner banners!/>
 </div>
 <div class="main">
-    <section class="dzen_section_DD product" style="padding-top: 30px;">
-        <div class="dzen_container">
+    <section class="dzen_section_DD product" style="padding-top: 30px;padding-bottom: 0px;">
             <#list classifies as classify>
                 <#if classify.products?? && classify.products?size gt 0>
-                    <div id="classify_${classify.id?c}" class="cur <#if classify_index % 2 != 0>products-even</#if>" style="padding-top: 30px;">
+                <div style="width: 100%;" class="<#if classify_index % 2 != 0>products-even</#if>">
+                <div class="dzen_container ">
+                    <div id="classify_${classify.id?c}" class="cur " style="padding-top: 30px;">
                         <header>
                             <div class="dzen_container">
                                 <h4>${classify.name!""}</h4>
@@ -82,9 +83,11 @@
                             </#list>
                         </div>
                     </div>
+                </div>
+                </div>
                 </#if>
             </#list>
-        </div>
+
     </section>
 </div>
 <!--侧边漂浮边栏-->
