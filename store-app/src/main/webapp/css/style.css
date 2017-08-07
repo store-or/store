@@ -1287,19 +1287,22 @@ th {
 
 #logo {
 	float: left;
-	margin-top: 10px;
 	margin-left: 220px;
+	font-weight: bolder;
+	font-size: 24px;
+	line-height: 60px;
 }
 
 #logo a {
 	color: #333;
+	font-weight: bolder;
+	font-size: 24px;
+	line-height: 60px;
 }
 
 .Contact-info {
-	float: right;
 	height: 60px;
 	line-height: 60px;
-    padding-right: 100px;
 }
 
 .Contact-info b {
@@ -1469,7 +1472,7 @@ nav > ul > .current-menu-item ,
 nav > ul > .current-post-ancestor,
 nav > ul > .current-menu-ancestor {
 	color: #660033;
-	border-bottom: 3px solid #ff4530;
+	border-bottom: 4px solid #ff4530;
 }
 
 /*-------- 4.2. Title/Breadcrumbs Bar --------*/

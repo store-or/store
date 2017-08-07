@@ -14,9 +14,13 @@
 </head>
 <body>
 <header id="dz_main_header" class="clearfix">
-    <div class="container">
+    <div class="container" style="width: 100%;height:60px">
         <div id="logo">
-            <a href="${absoluteContextPath}/index">${SystemConfig.company!""}</a>
+            <#if SystemConfig.company?? && SystemConfig.company?replace(" ", "") != "">
+                <a href="${absoluteContextPath}/index">${SystemConfig.company!"&nbsp;"}</a>
+            <#else>
+                &nbsp;
+            </#if>
         </div>
         <nav>
             <ul id="main_menu">

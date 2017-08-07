@@ -44,6 +44,7 @@
             <div class="clearfix"></div>
             <#if product.detailDO?? && product.detailDO.propertyArr?? && product.detailDO.propertyArr?size gt 0>
                 <#assign tmpRow = ((product.detailDO.propertyArr?size + 2)/3)?int/>
+                <#assign tmpMode = product.detailDO.propertyArr?size % 3/>
                 <table class="Product-parameter" cellpadding="0" cellspacing="0">
                     <tbody>
                         <tr>
@@ -53,6 +54,9 @@
                             <tr>
                                 <#list 0..2 as j>
                                     <#assign tmpIndex = j * tmpRow + i />
+                                    <#if product.detailDO.propertyArr?size == 4>
+                                        <#if (j == 2 && i == 1)><#assign tmpIndex = 4 /><#elseif j== 1 && i == 2><#assign tmpIndex = 5 /></#if>
+                                    </#if>
                                     <#if tmpIndex lte product.detailDO.propertyArr?size>
                                         <#assign detail = product.detailDO.propertyArr[tmpIndex-1]/>
                                     <#else>
