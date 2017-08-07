@@ -1303,6 +1303,8 @@ th {
 .Contact-info {
 	height: 60px;
 	line-height: 60px;
+	float: left;
+	margin-left: 40px;
 }
 
 .Contact-info b {
@@ -1342,10 +1344,11 @@ nav > ul > li a {
 	color: #333;
 	font-family: Roboto;
 	font-weight: 300;
-	font-size: 14px;
+	font-size: 18px;
 	text-align: center;
 	display: inline-block;
 	color: #535353;
+	line-height: 32px;
 }
 
 nav > ul > li > a {

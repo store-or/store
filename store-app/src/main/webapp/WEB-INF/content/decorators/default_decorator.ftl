@@ -24,10 +24,10 @@
         </div>
         <nav>
             <ul id="main_menu">
-                <li for="index"><a href="${absoluteContextPath}/index"><span>Home</span>首页</a></li>
-                <li for="product"><a href="${absoluteContextPath}/product/index"><span>Products</span>全部产品</a></li>
-                <li for="about"><a href="${absoluteContextPath}/about/index"><span>${SystemConfig.company!""}'s Story</span>关于${SystemConfig.company!""}</a></li>
-                <li for="contact"><a href="${absoluteContextPath}/contact/index"><span>Contact</span>联系我们</a></li>
+                <li for="index"><a href="${absoluteContextPath}/index">首页</a></li>
+                <li for="product"><a href="${absoluteContextPath}/product/index">全部产品</a></li>
+                <li for="about"><a href="${absoluteContextPath}/about/index">关于${SystemConfig.company!""}</a></li>
+                <li for="contact"><a href="${absoluteContextPath}/contact/index">联系我们</a></li>
             </ul>
         </nav>
         <div class="Contact-info">
