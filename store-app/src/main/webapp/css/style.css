@@ -1468,9 +1468,14 @@ nav > ul > .current-menu-item ,
 nav > ul > .current-post-ancestor,
 nav > ul > .current-menu-ancestor {
 	color: #660033;
-	border-bottom: 4px solid #ff4530;
-}
 
+}
+nav > ul > .current-menu-item ,
+nav > ul > .current-post-ancestor a,
+nav > ul > .current-menu-ancestor a{
+
+	color: #ff4530 !important;
+}
 /*-------- 4.2. Title/Breadcrumbs Bar --------*/
 
 #title_breadcrumbs_bar h1 {
@@ -3510,7 +3515,7 @@ aside.sidebar .flickr_stream img {
     }
     #about-info {
         line-height: 25px;
-        height: 200px!important;
+        height: 200px !important;
         overflow: hidden;
         padding:20px;
         text-align: left;
