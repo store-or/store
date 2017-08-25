@@ -2,23 +2,34 @@
 <html>
 <head>
     <title>Product-产品</title>
-    <link rel="stylesheet" href="${absoluteContextPath}/js/jquery/bxslider/jquery.bxslider.min.css" type="text/css" media="all">
-    <script src="${absoluteContextPath}/js/jquery/bxslider/jquery.bxslider.js"></script>
+    <script src="${absoluteContextPath}/js/jquery/slider.js"></script>
     <script>
         $().ready(function(){
-            $('.bxslider').bxSlider({
-                displaySlideQty:1,//显示li的个数
-                moveSlideQty: 1,//移动li的个数
-                captions: false,//自动控制
-                auto: true,
-
+            $('#banners').pbTouchSlider({
+                slider_Wrap: '#bannerParent',
+                slider_Threshold: 50 ,
+                slider_Speed:400 ,
+                slider_Drag : false,
+                slider_Ease:'linear',
+                slider_Breakpoints: {
+                    default: {
+                        height: 300
+                    },
+                    tablet: {
+                        height: 300,
+                        media: 1024
+                    },
+                    smartphone: {
+                        height: 200,
+                        media: 768
+                    }
+                }
             });
             $(window).scroll(function(){
                 var currentClassifyId;
                 $("div[id^='classify_']").each(function(index, element){
                     if ($(this).isVisible()) {
                         currentClassifyId = $(element).attr("id");
-                        console.log(currentClassifyId);
                     }
                 });
                 if (!$("#bannerParent").isVisible()) {

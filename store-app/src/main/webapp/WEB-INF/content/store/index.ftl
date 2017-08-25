@@ -2,25 +2,28 @@
 <html>
 <head>
     <title>Home-首页</title>
-    <link rel="stylesheet" href="${absoluteContextPath}/js/jquery/bxslider/jquery.bxslider.min.css" type="text/css" media="all">
-    <script src="${absoluteContextPath}/js/jquery/bxslider/jquery.bxslider.js"></script>
+    <script src="${absoluteContextPath}/js/jquery/slider.js"></script>
     <script>
         $().ready(function(){
-            <#if recommends?? && recommends?size gt 0>
-                $('#recommends').bxSlider({
-                    slideWidth: 240,
-                    minSlides: 2,
-                    maxSlides: 3,
-                    moveSlides: 3,
-                    slideMargin: 30,
-                    pager:false
-                });
-            </#if>
-            $('#banners').bxSlider({
-                displaySlideQty:1,//显示li的个数
-                moveSlideQty: 1,//移动li的个数
-                captions: false,//自动控制
-                auto: true
+            $('#banners').pbTouchSlider({
+                slider_Wrap: '#bannerParent',
+                slider_Threshold: 50 ,
+                slider_Speed:400 ,
+                slider_Drag : false,
+                slider_Ease:'linear',
+                slider_Breakpoints: {
+                    default: {
+                        height: 300
+                    },
+                    tablet: {
+                        height: 300,
+                        media: 1024
+                    },
+                    smartphone: {
+                        height: 200,
+                        media: 768
+                    }
+                }
             });
         });
     </script>
@@ -34,22 +37,34 @@
             <h5>精品推荐</h5>
         </div>
     </header>
-    <ul class="bxslider" style="height:150px;" id="recommends">
-        <#if recommends?? && recommends?size gt 0>
-            <#list recommends as recommend>
-                <li>
-                    <a href="${absoluteContextPath}/product/${recommend.product.id?c}">
-                        <img src="<@display.pictureUrl recommend.product.cover!''/>"/>
-                        <p class="productName"><strong>${recommend.product.name}</strong></p>
-                        <#if recommend.product.introduction?? && recommend.product.introduction!="">
-                            <p class="introduction"><span>${recommend.product.introduction!""}</span></p>
-                        </#if>
+    <div class="container-box">
+        <div class="carousel-example">
+            <!-- FLEXIBLE BOOTSTRAP CAROUSEL -->
+            <div id="simple-content-carousel" class="carousel flexible slide" data-ride="carousel" data-interval="5000" data-wrap="true">
+                <#if recommends?? && recommends?size gt 0>
+                    <div class="items">
+                        <#list recommends as recommend>
+                            <div class="flex-item" onclick="location.href='${absoluteContextPath}/product/${recommend.product.id?c}'">
+                                <img class="img-responsive" src="<@display.pictureUrl recommend.product.cover!''/>"/>
+                                <h4>${recommend.product.name}</h4>
+                                <p>${recommend.product.introduction!"&nbsp;"}</p>
+                            </div>
+                        </#list>
+                    </div>
+                    <div class="carousel-inner" role="listbox"></div>
+                    <a class="left carousel-control" href="#simple-content-carousel" role="button" data-slide="prev">
+                        <span class="fa fa-angle-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
                     </a>
-                </li>
-            </#list>
-        </#if>
-    </ul>
-    <div class="dzen_column_DD_span12 center_aligned" style="padding-top: 40px;"> <button class="btn-default btn-big" onclick="location.href='${absoluteContextPath}/product/index'">查看全部</button></div>
+                    <a class="right carousel-control" href="#simple-content-carousel" role="button" data-slide="next">
+                        <span class="fa fa-angle-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </#if>
+            </div>
+        </div>
+    </div>
+    <div class="dzen_column_DD_span12 center_aligned"> <button class="btn-default btn-big" onclick="location.href='${absoluteContextPath}/product/index'">查看全部</button></div>
 </section>
 <footer id="dz_main_footer">
     <div id="footer_columns">
@@ -72,14 +87,14 @@
                     </div>
                 </div>
             </div>
-            <div class="span8 clearfix">
-                <div class="widget rpwe_widget">
-                    <div class="floatL" style="width: 45%;">
+            <div class="span8 clearfix contact-right">
+                <div class="widget">
+                    <div class="floatL widget-l">
                         <h3>About Us</h3>
                         <h6>关于我们</h6>
                         <img src="<@display.pictureUrl CompanyConfig.aboutUs!''/>" alt=""/>
                     </div>
-                    <div class="rpwe-block floatL" style="width: 55%;">
+                    <div class="rpwe-block floatL widget-r">
                         <div id="about-info"><#if CompanyConfig.introduction?? && CompanyConfig.introduction?length gt 195>${CompanyConfig.introduction?substring(0, 192)}...<#else>${CompanyConfig.introduction!""}</#if></div>
                         <a href="${absoluteContextPath}/about/index" class="more-link">了解更多</a>
                     </div>

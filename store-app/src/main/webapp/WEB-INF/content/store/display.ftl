@@ -5,21 +5,16 @@
 </#macro>
 
 <#macro banner banners>
-    <div id="bannerParent">
-        <ul class="bxslider" style="height:300px;" id="banners">
+    <div class='o-sliderContainer' id="bannerParent" style="margin-top:0;">
+        <div class='o-slider' id='banners'>
             <#if banners?? && banners?size gt 0>
                 <#list banners as tmp>
-                    <li>
-                        <a href="<#if tmp.link?? && tmp.link!="">${tmp.link}<#else>javascript:void(0)</#if>">
-                            <img src="<@pictureUrl tmp.poster!''/>" style="max-height: 300px;width:100%;"/>
-                        </a>
-                    </li>
+                    <div class="o-slider--item" data-image="http://10.8.72.39:8080/store/img/store/20170630165516601.jpg" <#if tmp.link?? && tmp.link!="">onclick="location.href='${tmp.link}'"</#if>></div>
                 </#list>
-            <#else>
-                <li><img style="max-height: 300px;width:100%;"/></li>
             </#if>
-        </ul>
+        </div>
     </div>
+    <div style="clear: both"></div>
 </#macro>
 <#macro enum list name>
     <#if name??>

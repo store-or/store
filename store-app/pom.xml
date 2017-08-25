@@ -317,6 +317,10 @@
                         <include>**/*.js</include>
                         <include>**/*.css</include>
                     </includes>
+                    <excludes>
+                        <exclude>**/slider.js</exclude>
+                        <exclude>**/slider.min.js</exclude>
+                    </excludes>
                 </configuration>
             </plugin>
             <plugin>

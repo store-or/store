@@ -8,8 +8,13 @@
     <title><sitemesh:write property="title"/></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <link href="${absoluteContextPath}/css/style.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="${absoluteContextPath}/js/jquery/jquery-1.8.2.min.js"> </script>
+    <link href="${absoluteContextPath}/css/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="${absoluteContextPath}/css/awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="${absoluteContextPath}/js/jquery/jquery-1.11.2.min.js"> </script>
+    <script type="text/javascript" src="${absoluteContextPath}/css/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="${absoluteContextPath}/css/bootstrap/flexible-bootstrap-carousel.js"></script>
     <script type="text/javascript" src="${absoluteContextPath}/js/light.js"> </script>
+    <script type="text/javascript" src="${absoluteContextPath}/js/main.js"> </script>
     <sitemesh:write property="head"/>
 </head>
 <body>
@@ -22,14 +27,19 @@
                 &nbsp;
             </#if>
         </div>
-        <nav>
-            <ul id="main_menu">
-                <li for="index"><a href="${absoluteContextPath}/index">首页</a></li>
-                <li for="product"><a href="${absoluteContextPath}/product/index">全部产品</a></li>
-                <li for="about"><a href="${absoluteContextPath}/about/index">关于${SystemConfig.company!""}</a></li>
-                <li for="contact"><a href="${absoluteContextPath}/contact/index">联系我们</a></li>
-            </ul>
-        </nav>
+        <div>
+            <a href="javascript:void(0)" class="cd-nav-trigger"><span></span></a>
+            <main class="cd-main-content">
+                <nav class="cd-side-nav">
+                    <ul id="main_menu">
+                        <li for="index"><a href="${absoluteContextPath}/index">首页</a></li>
+                        <li for="product"><a href="${absoluteContextPath}/product/index">全部产品</a></li>
+                        <li for="about"><a href="${absoluteContextPath}/about/index">关于${SystemConfig.company!""}</a></li>
+                        <li for="contact"><a href="${absoluteContextPath}/contact/index">联系我们</a></li>
+                    </ul>
+                </nav>
+            </main> <!-- .cd-main-content -->
+        </div>
         <div class="Contact-info">
             <p>
                 <img src="${absoluteContextPath}/img/phone.png" alt=""/><b>${CompanyConfig.phone!""}</b>

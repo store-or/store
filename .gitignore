@@ -2,3 +2,4 @@
 *.iml
 *target
 /store-server/src/main/webapp/img/store
+/doc/design/标注
