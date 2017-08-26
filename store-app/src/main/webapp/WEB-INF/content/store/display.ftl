@@ -9,7 +9,7 @@
         <div class='o-slider' id='banners'>
             <#if banners?? && banners?size gt 0>
                 <#list banners as tmp>
-                    <div class="o-slider--item" data-image="http://10.8.72.39:8080/store/img/store/20170630165516601.jpg" <#if tmp.link?? && tmp.link!="">onclick="location.href='${tmp.link}'"</#if>></div>
+                    <div class="o-slider--item" data-image="<@pictureUrl tmp.poster!''/>" <#if tmp.link?? && tmp.link!="">onclick="location.href='${tmp.link}'"</#if>></div>
                 </#list>
             </#if>
         </div>
