@@ -40,6 +40,19 @@
                     $(".side_bar").addClass("hide");
                 }
             });
+            function checkLi() {
+                if ($("#banners .o-slider--item").attr("data-id")) {
+                    var $bannerUl = $('#bannerParent .o-slider-pagination');
+                    var $lastActive = $bannerUl.children("li.isActive");
+                    if ($lastActive.index() == $bannerUl.children("li").length - 1) {
+                        $bannerUl.children("li:first").click();
+                    } else {
+                        $lastActive.next().click();
+                    }
+                }
+                setTimeout(checkLi, 3000);
+            }
+            setTimeout(checkLi, 3000);
         });
 
         function scrollToDiv(id) {
