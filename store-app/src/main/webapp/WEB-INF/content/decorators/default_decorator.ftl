@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="keywords" content="闽南特产、麻枣、枕头饼"/>
     <title><sitemesh:write property="title"/></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <link href="${absoluteContextPath}/css/style.css" rel="stylesheet" type="text/css">
@@ -21,11 +22,7 @@
 <header id="dz_main_header" class="clearfix">
     <div class="container" style="width: 100%;height:60px">
         <div id="logo">
-            <#if SystemConfig.company?? && SystemConfig.company?replace(" ", "") != "">
-                <a href="${absoluteContextPath}/index">${SystemConfig.company!"&nbsp;"}</a>
-            <#else>
-                &nbsp;
-            </#if>
+            <a href="${absoluteContextPath}/index"><img src="${absoluteContextPath}/img/logo.png" style="height: 50px;padding-right:5px;"></a>
         </div>
         <div>
             <a href="javascript:void(0)" class="cd-nav-trigger"><span></span></a>

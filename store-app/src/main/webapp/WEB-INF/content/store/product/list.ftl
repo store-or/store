@@ -8,15 +8,14 @@
             $('#banners').pbTouchSlider({
                 slider_Wrap: '#bannerParent',
                 slider_Threshold: 50 ,
-                slider_Speed:400 ,
+                slider_Speed:800 ,
                 slider_Drag : false,
                 slider_Ease:'linear',
                 slider_Breakpoints: {
                     default: {
-                        height: 300
+                        height: $(window).height() - 60
                     },
                     tablet: {
-                        height: 300,
                         media: 1024
                     },
                     smartphone: {
@@ -26,6 +25,9 @@
                 }
             });
             $(window).scroll(function(){
+                $(".he_border1").each(function() {
+                   $(this).css("height", $(this).width() +"px");
+                });
                 var currentClassifyId;
                 $("div[id^='classify_']").each(function(index, element){
                     if ($(this).isVisible()) {
@@ -50,9 +52,9 @@
                         $lastActive.next().click();
                     }
                 }
-                setTimeout(checkLi, 3000);
+                setTimeout(checkLi, 5000);
             }
-            setTimeout(checkLi, 3000);
+            setTimeout(checkLi, 5000);
         });
 
         function scrollToDiv(id) {
@@ -89,7 +91,7 @@
                             <#list classify.products as product>
                                 <div class="dzen_column_DD_span3 news-cont">
                                     <div class="dzen_column_DD_span12 news-img he_border1">
-                                        <a class=" thumb-big">
+                                        <a class="thumb-big">
                                             <img class="he_border1_img" src="<@display.pictureUrl product.cover!''/>" alt="">
                                         </a>
                                         <div class="he_border1_caption">

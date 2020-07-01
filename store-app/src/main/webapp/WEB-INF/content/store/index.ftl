@@ -8,15 +8,14 @@
             $('#banners').pbTouchSlider({
                 slider_Wrap: '#bannerParent',
                 slider_Threshold: 50 ,
-                slider_Speed:400 ,
+                slider_Speed:800 ,
                 slider_Drag : false,
                 slider_Ease:'linear',
                 slider_Breakpoints: {
                     default: {
-                        height: 300
+                        height: $(window).height() - 60
                     },
                     tablet: {
-                        height: 300,
                         media: 1024
                     },
                     smartphone: {
@@ -35,9 +34,9 @@
                         $lastActive.next().click();
                     }
                 }
-                setTimeout(checkLi, 3000);
+                setTimeout(checkLi, 5000);
             }
-            setTimeout(checkLi, 3000);
+            setTimeout(checkLi, 5000);
         });
 
 

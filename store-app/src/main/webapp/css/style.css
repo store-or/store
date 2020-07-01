@@ -406,7 +406,7 @@ input[type="text"],input[type="password"],input[type="email"], textarea, select 
 }
 
 .news-img a img {
-	max-height: 173px;
+	/*max-height: 173px;*/
 }
 
 .news-cuolumn  .dzen-text {
